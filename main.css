@@ -13,6 +13,10 @@ body {
     background-attachment: fixed;
 }
 
+a {
+    color: #fff;
+}
+
 hr {
     margin: 10px 0;
 }
