@@ -103,17 +103,16 @@ hr {
 
 @media screen and (max-width: 650px) {
 
-
-
     .timeline::after {
         left: 25%;
     }
-    
+
     .timeline-item::after {
         left: -50px;
     }
 
-    .left-item, .right-item  {
+    .left-item,
+    .right-item {
         left: calc(144px - 25%);
         text-align: left;
     }
