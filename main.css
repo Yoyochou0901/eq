@@ -77,6 +77,15 @@ hr {
     position: relative;
     margin: 15px 0;
     width: 200px;
+    transition: color 0.5s ease;
+}
+
+.timeline-item a {
+    display: block;
+    text-decoration: none; 
+    color: inherit;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 .timeline-item::after {
@@ -89,6 +98,15 @@ hr {
     top: 5px;
     border-radius: 50%;
     z-index: 1;
+    transition: background-color 0.5s ease;
+}
+
+
+.timeline-item:hover {
+    color: #ffdd00;
+    &::after {
+        background-color: #ffdd00;
+    }
 }
 
 .left-item {
