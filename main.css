@@ -22,12 +22,14 @@ hr {
 }
 
 .main-content {
-    max-width: 1200px;
-    margin: 10% 15% 5% 15%;
+    width: 80%;
+    max-width: 900px;
+    margin: 10% auto 5% auto;
 }
 
 .main-title {
     font-size: 60px;
+    font-weight: 800;
 }
 
 .subtitle {
@@ -35,3 +37,94 @@ hr {
     font-weight: 600;
     opacity: 75%;
 }
+
+/* 時間軸 */
+.timeline {
+    position: relative;
+    margin: 50px auto;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    max-width: 500px;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: #ffffff80;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+.timeline-title {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.timeline-text {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.timeline-item {
+    position: relative;
+    margin: 15px 0;
+    width: 200px;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    right: -50px;
+    background-color: #ffffff;
+    top: 5px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.left-item {
+    right: 144px;
+    text-align: right;
+}
+
+.right-item {
+    left: 144px;
+    text-align: left;
+}
+
+.right-item::after {
+    left: -50px;
+}
+
+@media screen and (max-width: 650px) {
+
+
+
+    .timeline::after {
+        left: 25%;
+    }
+    
+    .timeline-item::after {
+        left: -50px;
+    }
+
+    .left-item, .right-item  {
+        left: calc(144px - 25%);
+        text-align: left;
+    }
+
+    .right-item::after {
+        left: -50px;
+    }
+
+    .timeline-item {
+        margin: 30px 0;
+    }
+}
+
+/* 時間軸 */
