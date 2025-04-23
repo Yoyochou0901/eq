@@ -24,7 +24,11 @@ hr {
 .main-content {
     width: 80%;
     max-width: 900px;
-    margin: 10% auto 5% auto;
+    margin: 2% auto;
+}
+
+#main {
+    margin: 10% auto;
 }
 
 .main-title {
