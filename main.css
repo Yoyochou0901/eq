@@ -23,7 +23,7 @@ hr {
 
 .main-content {
     width: 80%;
-    max-width: 900px;
+    max-width: 1200px;
     margin: 2% auto;
 }
 
@@ -82,7 +82,7 @@ hr {
 
 .timeline-item a {
     display: block;
-    text-decoration: none; 
+    text-decoration: none;
     color: inherit;
     padding: 10px;
     border-radius: 10px;
@@ -104,6 +104,7 @@ hr {
 
 .timeline-item:hover {
     color: #ffdd00;
+
     &::after {
         background-color: #ffdd00;
     }
