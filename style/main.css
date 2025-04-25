@@ -13,6 +13,11 @@ body {
     background-attachment: fixed;
 }
 
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
 a {
     color: #fff;
 }
@@ -97,17 +102,17 @@ nav {
     flex-flow: column;
     align-items: center;
     max-width: 500px;
-}
 
-.timeline::after {
-    content: '';
-    position: absolute;
-    width: 6px;
-    background-color: #ffffff80;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    margin-left: -3px;
+    &::after {
+        content: '';
+        position: absolute;
+        width: 6px;
+        background: linear-gradient(0deg, transparent 0px, #ffffff80 50px, #ffffff80 calc(100% - 50px), transparent 100%);
+        top: -30px;
+        bottom: 0;
+        left: 50%;
+        margin-left: -3px;
+    }
 }
 
 .timeline-title {
@@ -125,35 +130,34 @@ nav {
     margin: 15px 0;
     width: 200px;
     transition: color 0.5s ease;
-}
 
-.timeline-item a {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    padding: 10px;
-    border-radius: 10px;
-}
-
-.timeline-item::after {
-    content: '';
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    right: -50px;
-    background-color: #ffffff;
-    top: 5px;
-    border-radius: 50%;
-    z-index: 1;
-    transition: background-color 0.5s ease;
-}
-
-
-.timeline-item:hover {
-    color: #ffdd00;
+    a {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        padding: 10px;
+        border-radius: 10px;
+    }
 
     &::after {
-        background-color: #ffdd00;
+        content: '';
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        right: -50px;
+        background-color: #ffffff;
+        top: 5px;
+        border-radius: 50%;
+        z-index: 1;
+        transition: background-color 0.5s ease;
+    }
+
+    &:hover {
+        color: #ffdd00;
+
+        &::after {
+            background-color: #ffdd00;
+        }
     }
 }
 
@@ -165,10 +169,10 @@ nav {
 .right-item {
     left: 144px;
     text-align: left;
-}
 
-.right-item::after {
-    left: -50px;
+    &::after {
+        left: -50px;
+    }
 }
 
 @media screen and (max-width: 650px) {
