@@ -52,7 +52,7 @@ nav {
     a {
         color: inherit;
         display: block;
-        padding: 10px;
+        padding: 10px 20px;
         text-decoration: none;
         font-size: 18px;
         font-weight: 500;
@@ -76,7 +76,6 @@ nav {
 
     li {
         position: relative;
-        min-width: 120px;
 
         &:not(:last-child)::after {
             content: '';
