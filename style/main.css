@@ -68,6 +68,11 @@ nav {
         &:hover {
             background-color: #00000020;
         }
+        
+        &.now {
+            background-color: #00000020;
+            font-weight: 600;
+        }
     }
 
     ul {
@@ -149,7 +154,7 @@ nav {
         top: 5px;
         border-radius: 50%;
         z-index: 1;
-        transition: background-color 0.5s ease;
+        transition: all 0.5s ease;
     }
 
     &:hover {
