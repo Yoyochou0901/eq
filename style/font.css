@@ -1,37 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@font-face {
-    font-family: 'NotoSansCJKtc';
-    src: url('https://cdn.jsdelivr.net/gh/notofonts/noto-cjk@main/Sans/OTF/TraditionalChinese/NotoSansCJKtc-Black.otf') format('opentype');
-    font-weight: 900;
-  }
-  @font-face {
-    font-family: 'NotoSansCJKtc';
-    src: url('https://cdn.jsdelivr.net/gh/notofonts/noto-cjk@main/Sans/OTF/TraditionalChinese/NotoSansCJKtc-Bold.otf') format('opentype');
-    font-weight: 700;
-  }
-  @font-face {
-    font-family: 'NotoSansCJKtc';
-    src: url('https://cdn.jsdelivr.net/gh/notofonts/noto-cjk@main/Sans/OTF/TraditionalChinese/NotoSansCJKtc-Medium.otf') format('opentype');
-    font-weight: 500;
-  }
-  @font-face {
-    font-family: 'NotoSansCJKtc';
-    src: url('https://cdn.jsdelivr.net/gh/notofonts/noto-cjk@main/Sans/OTF/TraditionalChinese/NotoSansCJKtc-Regular.otf') format('opentype');
-    font-weight: 400;
-  }
-  @font-face {
-    font-family: 'NotoSansCJKtc';
-    src: url('https://cdn.jsdelivr.net/gh/notofonts/noto-cjk@main/Sans/OTF/TraditionalChinese/NotoSansCJKtc-Light.otf') format('opentype');
-    font-weight: 300;
-  }
-  @font-face {
-    font-family: 'NotoSansCJKtc';
-    src: url('https://cdn.jsdelivr.net/gh/notofonts/noto-cjk@main/Sans/OTF/TraditionalChinese/NotoSansCJKtc-DemiLight.otf') format('opentype');
-    font-weight: 200;
-  }
-  @font-face {
-    font-family: 'NotoSansCJKtc';
-    src: url('https://cdn.jsdelivr.net/gh/notofonts/noto-cjk@main/Sans/OTF/TraditionalChinese/NotoSansCJKtc-Thin.otf') format('opentype');
-    font-weight: 100;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+CN:wght@100;200;300;400;500;600;700;800;900&display=swap');
