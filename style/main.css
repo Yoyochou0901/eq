@@ -67,10 +67,11 @@ nav {
 
         &:hover {
             background-color: #00000020;
+            border-top: 3px solid #ffffffaa;
         }
-        
+
         &.now {
-            background-color: #00000020;
+            border-top: 3px solid #fff;
             font-weight: 600;
         }
     }
