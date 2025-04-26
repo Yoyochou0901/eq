@@ -1,4 +1,5 @@
 @import url("font.css");
+@import url("nav.css");
 
 html {
     min-height: 100%;
@@ -49,55 +50,6 @@ hr {
 
 header {
     width: 100%;
-}
-
-nav {
-    background-color: #ffffff30;
-
-    a {
-        color: inherit;
-        display: block;
-        padding: 10px 20px;
-        text-decoration: none;
-        font-size: 18px;
-        font-weight: 500;
-        text-align: center;
-        height: 2rem;
-        transition: background-color 0.3s ease;
-
-        &:hover {
-            background-color: #00000020;
-            border-top: 3px solid #ffffffaa;
-        }
-
-        &.now {
-            border-top: 3px solid #fff;
-            font-weight: 600;
-        }
-    }
-
-    ul {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        flex-wrap: wrap;
-        list-style: none;
-        margin: 0;
-    }
-
-    li {
-        position: relative;
-
-        &:not(:last-child)::after {
-            content: '';
-            position: absolute;
-            right: 0;
-            top: 25%;
-            height: 50%;
-            width: 1px;
-            background-color: #ffffff50;
-        }
-    }
 }
 
 /* 時間軸 */
