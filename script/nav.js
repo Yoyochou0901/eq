@@ -20,7 +20,7 @@ function loadNav(depth = 0, now = NaN) {
     const navHTML = `
     <nav>
         <a href="${base}index.html" class="nav-home">
-            <img src="../resources/icon-home.svg" width=30px></i>
+            <img src="${base}resources/icon-home.svg" width=30px></i>
         </a>
         <ul>${links}</ul>
     </nav>
