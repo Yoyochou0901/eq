@@ -3,15 +3,15 @@
 
 html {
     min-height: 100%;
+    background: linear-gradient(135deg, #202020, #004765);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 body {
-    background: linear-gradient(135deg, #202020, #004765);
     margin: 0;
     font-family: "Outfit", "Noto Sans TC", "Noto Sans JP", "Noto Sans CN";
     color: #fff;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
 }
 
 ::-webkit-scrollbar {
