@@ -6,6 +6,7 @@ html {
     background: linear-gradient(135deg, #202020, #004765);
     background-repeat: no-repeat;
     background-attachment: fixed;
+    overscroll-behavior: none;
 }
 
 body {
