@@ -12,6 +12,7 @@ nav {
         flex-wrap: wrap;
         list-style: none;
         margin: 0;
+        padding-inline-start: 20px;
 
 
         a {
@@ -49,6 +50,15 @@ nav {
             height: 50%;
             width: 1px;
             background-color: #ffffff50;
+        }
+    }
+
+    .icon-home {
+        border-radius: 10px;
+        padding: 5px;
+        transition: all 0.3s ease;
+        &:hover {
+            background-color: #00000020;
         }
     }
 }
