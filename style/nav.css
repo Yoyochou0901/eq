@@ -1,3 +1,5 @@
+@import url("https://code.jquery.com/jquery-3.6.0.min.js");
+
 nav {
     background-color: #ffffff30;
     display: flex;
@@ -36,6 +38,12 @@ nav {
                 /* background-color: #00000020; */
                 font-weight: 600;
             }
+
+            &:active {
+                background-color: #00000030;
+                font-weight: 700;
+            }
+
         }
     }
 
@@ -57,8 +65,63 @@ nav {
         border-radius: 10px;
         padding: 5px;
         transition: all 0.3s ease;
+
         &:hover {
             background-color: #00000020;
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        & {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            flex-direction: column;
+            min-width: 250px;
+            max-width: 100%;
+            z-index: 1;
+            padding: 30px 15px;
+            justify-content: start;
+            align-items: stretch;
+
+            li {
+                &::after {
+                    content: '';
+                    position: absolute;
+                    left: 15%;
+                    top: 0;
+                    width: 70%;
+                    height: 1px;
+                    background-color: #ffffff50;
+                }
+            }
+
+            ul {
+                margin-top: 20px;
+                flex-direction: column;
+                align-items: stretch;
+                width: 100%;
+                padding-inline-start: 0;
+
+                a {
+
+                    &:hover {
+                        background-color: #00000020;
+                        border-top: none;
+                        border-right: 3px solid #ffffffaa;
+                    }
+
+                    &.now {
+                        border-top: none;
+                        border-right: 3px solid #fff;
+                        font-weight: 600;
+                    }
+                }
+            }
+            .icon-home {
+                align-self: center;
+            }
         }
     }
 }
