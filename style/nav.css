@@ -71,19 +71,19 @@ nav {
         }
     }
 
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 800px) {
         & {
             position: absolute;
             right: 0;
             top: 0;
             bottom: 0;
             flex-direction: column;
-            min-width: 250px;
-            max-width: 100%;
+            width: calc(100vw - 80px);
             z-index: 1;
             padding: 30px 15px;
             justify-content: start;
             align-items: stretch;
+            background-color: #00000080;
 
             li {
                 &::after {
@@ -107,7 +107,7 @@ nav {
                 a {
 
                     &:hover {
-                        background-color: #00000020;
+                        background-color: #ffffff20;
                         border-top: none;
                         border-right: 3px solid #ffffffaa;
                     }
@@ -119,9 +119,59 @@ nav {
                     }
                 }
             }
+
             .icon-home {
                 align-self: center;
+
+                &:hover {
+                    background-color: #ffffff20;
+                }
             }
         }
+    }
+}
+
+
+#menu-toggle {
+    display: none;
+}
+
+@media screen and (max-width: 800px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    * {
+        transition: 0.5s all ease;
+    }
+
+    #menu {
+        position: absolute;
+        flex-direction: column;
+        right: calc(-100vw + 50px);
+    }
+
+    #menu.open {
+        transform: translateX(calc(-100vw + 50px))
+    }
+
+    #menu-toggle {
+        z-index: 2;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 30px;
+        display: block;
+        padding: 10px;
+        background-color: #ffffff20;
+    }
+
+    #menu-toggle.open {
+        transform: translateX(calc(-100vw + 50px)); /* 按下時將按鈕移動到左邊 */
+    }
+    
+    #menu-toggle.open img {
+        transform: rotate(360deg);
     }
 }

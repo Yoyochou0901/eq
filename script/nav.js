@@ -18,9 +18,12 @@ function loadNav(depth = 0, now = NaN) {
 
 
     const navHTML = `
-    <nav>
-        <a href="${base}index.html" class="icon-home">
-            <img src="${base}resources/icon-home.svg" width=30px></i>
+    <span id="menu-toggle" aria-label="切換選單">
+        <img src="${base}resources/icon-menu.svg" width="30px">
+    </span>
+    <nav id="menu">
+        <a href="${base}index.html" class="icon-home" aria-label="連結至首頁">
+            <img src="${base}resources/icon-home.svg" width=30px>
         </a>
         <ul>${links}</ul>
     </nav>
@@ -28,3 +31,13 @@ function loadNav(depth = 0, now = NaN) {
 
     document.body.insertAdjacentHTML("afterbegin", navHTML);
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', () => {
+        menu.classList.toggle('open');
+        menuToggle.classList.toggle('open')
+    });
+});
