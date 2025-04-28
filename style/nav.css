@@ -147,7 +147,7 @@ nav {
     }
 
     #menu {
-        position: absolute;
+        position: fixed;
         flex-direction: column;
         right: calc(-100vw + 50px);
     }
@@ -158,7 +158,7 @@ nav {
 
     #menu-toggle {
         z-index: 2;
-        position: absolute;
+        position: fixed;
         top: 0;
         right: 0;
         width: 30px;
