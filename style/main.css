@@ -3,7 +3,7 @@
 
 body,html {
     height: 100%;
-    background: linear-gradient(135deg, #202020, #004765);
+    background: linear-gradient(to right, #202020, #004765);
     background-repeat: no-repeat;
     background-attachment: fixed;
     overscroll-behavior: none;
