@@ -26,17 +26,35 @@ nav {
             font-weight: 500;
             text-align: center;
             height: 2rem;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, border 0.5s ease;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 3px;
+                background-color: white;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
 
             &:hover {
                 background-color: #00000020;
-                border-top: 3px solid #ffffffaa;
+
+                &::before {
+                    opacity: 0.5;
+                }
             }
 
             &.now {
-                border-top: 3px solid #fff;
                 /* background-color: #00000020; */
                 font-weight: 600;
+
+                &::before {
+                    opacity: 1;
+                }
             }
 
             &:active {
@@ -171,7 +189,7 @@ nav {
         transform: translateX(calc(-100vw + 50px));
         background-color: #000000aa;
     }
-    
+
     #menu-toggle.open img {
         transform: rotate(360deg);
     }
