@@ -39,5 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
     menuToggle.addEventListener('click', () => {
         menu.classList.toggle('open');
         menuToggle.classList.toggle('open')
+        document.body.classList.toggle('lock');
     });
 });

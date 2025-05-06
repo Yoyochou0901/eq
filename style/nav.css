@@ -123,17 +123,25 @@ nav {
                 padding-inline-start: 0;
 
                 a {
+                    &::before {
+                        width: 3px;
+                        height: 100%;
+                    }
 
                     &:hover {
                         background-color: #ffffff20;
-                        border-top: none;
-                        border-right: 3px solid #ffffffaa;
+
+                        &::before {
+                            opacity: 0.5;
+                        }
                     }
 
                     &.now {
-                        border-top: none;
-                        border-right: 3px solid #fff;
                         font-weight: 600;
+
+                        &::before {
+                            opacity: 1;
+                        }
                     }
                 }
             }
@@ -192,5 +200,10 @@ nav {
 
     #menu-toggle.open img {
         transform: rotate(360deg);
+    }
+
+
+    body.lock {
+        overflow: hidden;
     }
 }
