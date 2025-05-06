@@ -10,6 +10,10 @@ body,html {
     margin: 0;
     font-family: "Outfit", "Noto Sans TC", "Noto Sans JP", "Noto Sans CN";
     color: #fff;
+
+    &::selection {
+        background-color: #80808050;
+    }
 }
 
 ::-webkit-scrollbar {
