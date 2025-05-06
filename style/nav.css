@@ -126,6 +126,8 @@ nav {
                     &::before {
                         width: 3px;
                         height: 100%;
+                        left: unset;
+                        right: 0;
                     }
 
                     &:hover {
