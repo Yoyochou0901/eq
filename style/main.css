@@ -2,10 +2,11 @@
 @import url("nav.css");
 @import url("timeline.css");
 
-body,html {
+body,
+html {
     height: 100%;
     background: linear-gradient(135deg, #202020, #03425d);
-    background-color:#07394e;
+    background-color: #07394e;
     background-repeat: no-repeat;
     background-attachment: fixed;
     margin: 0;
