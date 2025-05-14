@@ -28,6 +28,9 @@ a {
 
 hr {
     margin: 10px 0;
+    border: none;
+    height: 1px;
+    background-color: #ffffff80;
 }
 
 .main-content {
