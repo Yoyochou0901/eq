@@ -24,6 +24,10 @@ html {
 
 a {
     color: #fff;
+    text-decoration: underline dotted;
+    &:hover {
+        text-decoration: underline solid;
+    }
 }
 
 hr {
@@ -72,4 +76,38 @@ hr {
 
 header {
     width: 100%;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+p {
+    font-size: 18px;
+}
+
+img {
+    margin: 10px;
+}
+
+.hr {
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: '';
+        bottom: -20px;
+        margin: 10px 0;
+        height: 1px;
+        width: 100%;
+        background-color: #ffffff80;
+    }
 }
