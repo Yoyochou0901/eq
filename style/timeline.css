@@ -89,7 +89,7 @@
         left: 25%;
     }
 
-    .timeline-item::after {
+    .timeline-item a::after {
         left: -50px;
     }
 
@@ -99,7 +99,7 @@
         text-align: left;
     }
 
-    .right-item::after {
+    .right-item a::after {
         left: -50px;
     }
 
