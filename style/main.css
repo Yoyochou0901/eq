@@ -25,9 +25,6 @@ html {
 a {
     color: #fff;
     text-decoration: underline dotted;
-    &:hover {
-        text-decoration: underline solid;
-    }
 }
 
 hr {
