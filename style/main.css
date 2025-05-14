@@ -32,8 +32,24 @@ hr {
 
 .main-content {
     width: 80%;
-    max-width: 1200px;
     margin: 2% auto;
+
+    max-width: 1200px;
+
+    @media screen and (max-width: 1920px) {
+
+        max-width: 1000px;
+    }
+
+    @media screen and (max-width: 1200px) {
+
+        max-width: 720px;
+    }
+
+    @media screen and (max-width: 800px) {
+
+        max-width: 600px;
+    }
 }
 
 #main {
