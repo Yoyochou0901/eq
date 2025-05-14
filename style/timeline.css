@@ -59,10 +59,11 @@
         color: #ffdd00;
 
         a {
-            background-color: #ffffff20;
+            text-shadow: 3px 3px 5px #00000080;
 
             &::after {
                 background-color: #ffdd00;
+                box-shadow: 3px 3px 5px #00000080;
             }
         }
     }
