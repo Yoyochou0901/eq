@@ -114,6 +114,16 @@ p {
     .content {
         margin: 3px;
     }
+
+    img {
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 20px #ffffff80;
+        }
+    }
+
 }
 
 .hr {
