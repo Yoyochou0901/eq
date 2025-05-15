@@ -91,8 +91,29 @@ p {
     font-size: 18px;
 }
 
-img {
-    margin: 10px;
+.image-container {
+    margin: 0 10px;
+    padding: 3px;
+    border: #999 solid 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ccc;
+    width: 300px;
+
+    &.right {
+        float: right;
+    }
+
+    &.left {
+        float: left;
+    }
+
+    clear: both;
+
+    .content {
+        margin: 3px;
+    }
 }
 
 .hr {
