@@ -4,10 +4,10 @@ function loadNav(depth = 0, now = NaN) {
 
     const navItems = [
         // { name: "首頁", url: "index.html", id: "index" },
-        { name: "災害地震清單", url: "disaster-quakes/index.html", id: "quake" },
-        { name: "斷層資訊", url: "faults/index.html", id: "fault" },
+        { name: "災害地震清單", url: "disaster-quakes/", id: "quake" },
+        { name: "斷層資訊", url: "faults/", id: "fault" },
         { name: "地震防災", url: "preparedness.html", id: "preparedness" },
-        { name: "科普", url: "science.html", id: "science" },
+        { name: "科普", url: "science/", id: "science" },
         { name: "相關網站", url: "sites.html", id: "sites" }
     ];
 
