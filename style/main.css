@@ -97,12 +97,6 @@ div.image-block {
     flex-wrap: wrap;
     gap: 10px;
 
-    .text-container {
-        flex: 1 1 300px;
-        min-width: 200px;
-        order: 0;
-    }
-
     .image-container {
         order: 1;
         padding: 5px;
@@ -111,16 +105,26 @@ div.image-block {
         background-color: #ffffff30;
         align-items: center;
         color: #ccc;
-        flex: 0 0;
+        width: 90%;
+        margin: 0 auto;
+
+        .content {
+            text-align: center;
+        }
 
         img {
             transition: all 0.5s ease;
             border-radius: 8px;
-            width: 250px;
+            max-height: 600px;
+            max-width: 100%;
+            height: auto;
+            width: auto;
+            display: block;
+            margin: 3px auto;
 
             &:hover {
                 transform: scale(1.05);
-                box-shadow: 0 0 20px #ffffff80;
+                box-shadow: 0 0 15px #fff;
             }
         }
 
