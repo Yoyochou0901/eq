@@ -52,8 +52,8 @@ hr {
 }
 
 .body-content {
-    box-shadow: 1px 1px 3px #fff;
-    background-color: #222;
+    box-shadow: 0px 0px 3px #000000;
+    background-color: #00000040;
     padding: 10px;
 }
 
