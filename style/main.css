@@ -189,26 +189,34 @@ div.image-block {
             position: relative;
             /* transform: translateY(-50%); */
             z-index: 2;
-            background-color: #ffffff80;
+            background-color: #ffffffaa;
             color: #000;
             border: none;
             width: 30px;
             height: 65px;
-            border-radius: 15px;
+            border-radius: 10px;
             cursor: pointer;
             font-size: 24px;
             backdrop-filter: blur(4px);
 
             &.left {
-                left: 0;
+                left: 10px;
             }
 
             &.right {
-                right: 0;
+                right: 10px;
             }
 
             &:hover {
-                background-color: #ffffff60;
+                background-color: #ffffff80;
+            }
+
+            &.disabled {
+                background-color: #ffffff50;
+
+                &:hover {
+                    background-color: #ffffff50;
+                }
             }
         }
     }
