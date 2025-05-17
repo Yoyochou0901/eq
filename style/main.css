@@ -176,6 +176,7 @@ div.image-block {
 
             .section-child {
                 flex: 0 0 auto;
+                box-sizing: border-box;
                 width: 200px;
                 height: 300px;
                 border: 2px solid #fff;
