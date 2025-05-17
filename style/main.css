@@ -2,6 +2,18 @@
 @import url("nav.css");
 @import url("timeline.css");
 
+:root {
+    --content-width: 960px;
+
+    @media screen and (max-width: 1200px) {
+        --content-width: 720px;
+    }
+
+    @media screen and (max-width: 800px) {
+        --content-width: 600px;
+    }
+}
+
 body,
 html {
     background: linear-gradient(135deg, #202020, #04354a 75%, #022a3b);
@@ -38,17 +50,7 @@ hr {
     width: 80%;
     margin: 2% auto;
 
-    max-width: 960px;
-
-    @media screen and (max-width: 1200px) {
-
-        max-width: 720px;
-    }
-
-    @media screen and (max-width: 800px) {
-
-        max-width: 600px;
-    }
+    max-width: var(--content-width);
 }
 
 .body-content {
@@ -143,4 +145,72 @@ div.image-block {
         width: 100%;
         background-color: #ffffff80;
     }
+}
+
+.section {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    min-height: 250px;
+
+    background-color: #60aaff20;
+
+    &:nth-child(even) {
+        background-color: #ffffff20;
+    }
+
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        .section-content {
+            width: 80%;
+            max-width: var(--content-width);
+            margin: 0;
+            display: flex;
+            justify-content: safe center;
+            align-items: center;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+
+            .section-child {
+                flex: 0 0 auto;
+                width: 200px;
+                height: 300px;
+                border: 2px solid #fff;
+                border-radius: 20px;
+                margin: 10px 20px;
+            }
+        }
+
+        .scroll-btn {
+            position: relative;
+            /* transform: translateY(-50%); */
+            z-index: 2;
+            background-color: #ffffff80;
+            color: #000;
+            border: none;
+            width: 30px;
+            height: 65px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 24px;
+            backdrop-filter: blur(4px);
+
+            &.left {
+                left: 0;
+            }
+
+            &.right {
+                right: 0;
+            }
+
+            &:hover {
+                background-color: #ffffff60;
+            }
+        }
+    }
+
+
 }

@@ -13,9 +13,48 @@
     <script>loadNav(1, "science");</script>
     <div class="main-content">
         <h1>科普</h1>
-        <div></div>
-        <h2 class></h2>
+        <div class="section">
+            <div>
+                <button class="scroll-btn left">&lt;</button>
+                <div class="section-content">
+                    <div class="section-child"></div>
+                    <div class="section-child"></div>
+                    <div class="section-child"></div>
+                    <div class="section-child"></div>
+                    <div class="section-child"></div>
+                    <div class="section-child"></div>
+                </div>
+                <button class="scroll-btn right">&gt;</button>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-title"></div>
+            <div class="section-content"></div>
+        </div>
+        <div class="section">
+            <div class="section-title"></div>
+            <div class="section-content"></div>
+        </div>
+        <div class="section">
+            <div class="section-title"></div>
+            <div class="section-content"></div>
+        </div>
     </div>
+
+    <script>
+        document.querySelectorAll('.section').forEach(section => {
+            const container = section.querySelector('.section-content');
+            const btnLeft = section.querySelector('.scroll-btn.left');
+            const btnRight = section.querySelector('.scroll-btn.right');
+
+            btnLeft.addEventListener('click', () => {
+                container.scrollBy({ left: -240, behavior: 'smooth' });
+            });
+            btnRight.addEventListener('click', () => {
+                container.scrollBy({ left: 240, behavior: 'smooth' });
+            });
+        });
+    </script>
 </body>
 
 </html>
