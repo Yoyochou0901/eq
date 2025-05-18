@@ -147,81 +147,82 @@ div.image-block {
     }
 }
 
-.section {
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    min-height: 250px;
+/* 科普首頁 */
+.main-content#science {
+    .section {
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        min-height: 250px;
 
-    background-color: #60aaff20;
+        background-color: #60aaff20;
 
-    &:nth-child(even) {
-        background-color: #ffffff20;
-    }
-
-    div {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-
-        .section-content {
-            width: 80%;
-            max-width: var(--content-width);
-            margin: 0;
-            display: flex;
-            justify-content: safe center;
-            align-items: center;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-            mask-image: linear-gradient(to right, transparent 0, black 20px, black calc(100% - 20px), transparent 100%);
-
-            .section-child {
-                flex: 0 0 auto;
-                box-sizing: border-box;
-                width: 200px;
-                height: 300px;
-                border: 2px solid #fff;
-                border-radius: 20px;
-                margin: 10px 20px;
-            }
+        &:nth-child(even) {
+            background-color: #ffffff20;
         }
 
-        .scroll-btn {
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             position: relative;
-            /* transform: translateY(-50%); */
-            z-index: 2;
-            background-color: #ffffffaa;
-            color: #000;
-            border: none;
-            width: 30px;
-            height: 65px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 24px;
-            backdrop-filter: blur(4px);
 
-            &.left {
-                left: 10px;
+            .section-content {
+                width: 80%;
+                max-width: var(--content-width);
+                margin: 0;
+                display: flex;
+                justify-content: safe center;
+                align-items: center;
+                overflow-x: hidden;
+                scroll-behavior: smooth;
+                mask-image: linear-gradient(to right, transparent 0, black 20px, black calc(100% - 20px), transparent 100%);
+
+                .section-child {
+                    flex: 0 0 auto;
+                    box-sizing: border-box;
+                    width: 200px;
+                    height: 300px;
+                    border: 2px solid #fff;
+                    border-radius: 20px;
+                    margin: 10px 20px;
+                }
             }
 
-            &.right {
-                right: 10px;
-            }
+            .scroll-btn {
+                position: relative;
+                /* transform: translateY(-50%); */
+                z-index: 2;
+                background-color: #ffffffaa;
+                color: #000;
+                border: none;
+                width: 30px;
+                height: 65px;
+                border-radius: 10px;
+                cursor: pointer;
+                font-size: 24px;
+                backdrop-filter: blur(4px);
 
-            &:hover {
-                background-color: #ffffff80;
-            }
+                &.left {
+                    left: 10px;
+                }
 
-            &.disabled {
-                background-color: #ffffff50;
-                cursor: not-allowed;
+                &.right {
+                    right: 10px;
+                }
 
                 &:hover {
+                    background-color: #ffffff80;
+                }
+
+                &.disabled {
                     background-color: #ffffff50;
+                    cursor: not-allowed;
+
+                    &:hover {
+                        background-color: #ffffff50;
+                    }
                 }
             }
         }
     }
-
-
 }
