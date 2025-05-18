@@ -13,38 +13,10 @@
     <script>loadNav(1, "science");</script>
     <div class="main-content" id="science">
         <h1>科普</h1>
-        <div class="section">
-            <div>
-                <button class="scroll-btn left">&lt;</button>
-                <div class="section-content">
-                    <div class="section-child">
-                        <div class="item-image"></div>
-                        <div class="item-title"></div>
-                        <div class="item-content"></div>
-                    </div>
-                    <div class="section-child"></div>
-                    <div class="section-child"></div>
-                    <div class="section-child"></div>
-                    <div class="section-child"></div>
-                    <div class="section-child"></div>
-                </div>
-                <button class="scroll-btn right">&gt;</button>
-            </div>
-        </div>
-        <div class="section">
-            <div class="section-title"></div>
-            <div class="section-content"></div>
-        </div>
-        <div class="section">
-            <div class="section-title"></div>
-            <div class="section-content"></div>
-        </div>
-        <div class="section">
-            <div class="section-title"></div>
-            <div class="section-content"></div>
-        </div>
+        <div id="science-section"></div>
     </div>
 
+    <script src="/script/science-section.js"></script>
     <script>
         document.querySelectorAll('.section').forEach(section => {
             const content = section.querySelector('.section-content');
