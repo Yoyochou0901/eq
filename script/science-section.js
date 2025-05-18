@@ -2,8 +2,8 @@ const items = [
     {
         name: "地震", children: [
             { name: "震度、規模？", content: "常見名詞解釋", img: "", url: "1/1.html" },
-            { name: "", content: "", img: "", url: "" },
-            { name: "", content: "", img: "", url: "" },
+            { name: "P波、S波、表面波？", content: "地震波", img: "", url: "" },
+            { name: "地震速報！", content: "地震速報原理", img: "", url: "" },
             { name: "", content: "", img: "", url: "" },
             { name: "地震預測可行嗎", content: "", img: "", url: "" },
             { name: "", content: "", img: "", url: "" },
@@ -11,7 +11,10 @@ const items = [
     },
     {
         name: "海嘯", children: [
-            { name: "", content: "", img: "", url: "" },
+            { name: "海嘯是怎麼形成的", content: "海嘯成因", img: "", url: "" },
+            { name: "海嘯來前海水一定會後退嗎", content: "", img: "", url: "" },
+            { name: "1 公尺的海嘯也有危險嗎", content: "海嘯的破壞力", img: "", url: "" },
+            { name: "台灣也會有海嘯嗎", content: "過去的海嘯紀錄和海嘯的風險", img: "", url: "" },
         ]
     },
 ]
