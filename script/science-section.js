@@ -1,20 +1,22 @@
 const items = [
     {
         name: "地震", children: [
-            { name: "震度、規模？", content: "常見名詞解釋", img: "", url: "1/1.html" },
-            { name: "P波、S波、表面波？", content: "地震波", img: "", url: "" },
-            { name: "地震速報！", content: "地震速報原理", img: "", url: "" },
-            { name: "", content: "", img: "", url: "" },
-            { name: "地震預測可行嗎", content: "", img: "", url: "" },
-            { name: "", content: "", img: "", url: "" },
+            { name: "震源？震央？", content: "地震相關的常見名詞解釋", img: "", url: "1-1.html" },
+            { name: "P波、S波、表面波？", content: "地震波的種類", img: "", url: "" },
+            { name: "震度5強、6弱，是什麼等級", content: "台灣和各國的震度分級", img: "", url: "" },
+            { name: "不要再什麼規模前都加上芮氏了", content: "地震規模的種類", img: "", url: "" },
+            { name: "地震警報 快趴下！", content: "地震速報的原理", img: "", url: "" },
+            { name: "直下型地震、海溝型地震？", content: "地震的類型", img: "", url: "" },
+            { name: "耳鳴、地震雲？是地震的前兆嗎", content: "地震預測可行嗎", img: "", url: "" },
+            { name: "距離震央近，震度越大？", content: "深層地震的不自然震度分布", img: "", url: "" },
         ]
     },
     {
         name: "海嘯", children: [
-            { name: "海嘯是怎麼形成的", content: "海嘯成因", img: "", url: "" },
-            { name: "海嘯來前海水一定會後退嗎", content: "", img: "", url: "" },
+            { name: "海嘯是怎麼形成的", content: "海嘯的成因", img: "", url: "" },
+            { name: "海嘯來前海水一定會後退嗎", content: "海嘯常見的迷思", img: "", url: "" },
             { name: "1 公尺的海嘯也有危險嗎", content: "海嘯的破壞力", img: "", url: "" },
-            { name: "台灣也會有海嘯嗎", content: "過去的海嘯紀錄和海嘯的風險", img: "", url: "" },
+            { name: "台灣也會有海嘯嗎", content: "過去的海嘯紀錄和海嘯風險", img: "", url: "" },
         ]
     },
 ]
