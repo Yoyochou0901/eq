@@ -173,6 +173,7 @@ div.image-block {
             align-items: center;
             overflow-x: hidden;
             scroll-behavior: smooth;
+            mask-image: linear-gradient(to right, transparent 0, black 20px, black calc(100% - 20px), transparent 100%);
 
             .section-child {
                 flex: 0 0 auto;
@@ -214,7 +215,7 @@ div.image-block {
             &.disabled {
                 background-color: #ffffff50;
                 cursor: not-allowed;
-                
+
                 &:hover {
                     background-color: #ffffff50;
                 }
