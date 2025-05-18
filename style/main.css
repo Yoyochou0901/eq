@@ -202,15 +202,16 @@ div.image-block {
                     height: 300px;
                     border: 3px solid #fff;
                     border-radius: 20px;
-                    margin: 10px 20px;
+                    margin: 20px;
                     display: block;
                     text-decoration: none;
                     cursor: pointer;
-                    background-color: #00000030;
+                    background: #00000030;
 
                     &:hover {
                         border-color: #ffc900;
-                        box-shadow: 0 0 10px #ffc900;
+                        box-shadow: 0 0 15px #ffc900;
+                        background: color-mix(in srgb, #00000030 90%, #ffc90030);
 
                         .item-image img {
                             transform: scale(1.1);
