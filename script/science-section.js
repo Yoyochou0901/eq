@@ -1,11 +1,11 @@
 const items = [
     {
         name: "地震", children: [
-            { name: "震度、規模？", content: "", img: "", url: "1/1.html" },
+            { name: "震度、規模？", content: "常見名詞解釋", img: "", url: "1/1.html" },
             { name: "", content: "", img: "", url: "" },
             { name: "", content: "", img: "", url: "" },
             { name: "", content: "", img: "", url: "" },
-            { name: "", content: "", img: "", url: "" },
+            { name: "地震預測可行嗎", content: "", img: "", url: "" },
             { name: "", content: "", img: "", url: "" },
         ]
     },
