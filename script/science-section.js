@@ -31,7 +31,7 @@ items.forEach((item) => {
         return `
         <a href="${i.url}" class="section-child">
             <div class="item-image">
-                <img src="${i.img===""?"../resources/science/EQ.png":i.img}">
+                <img src="${i.img === "" ? "../resources/science/EQ.png" : i.img}">
             </div>
             <div class="item-title">${i.name}</div>
             <div class="item-content">${i.content}</div>
@@ -58,3 +58,29 @@ items.forEach((item) => {
 
     scienceSection.appendChild(section);
 })
+
+document.querySelectorAll('.section').forEach(section => {
+    const content = section.querySelector('.section-content');
+    const btnLeft = section.querySelector('.scroll-btn.left');
+    const btnRight = section.querySelector('.scroll-btn.right');
+
+    const updateButtons = () => {
+        const scrollLeft = content.scrollLeft;
+        const maxScroll = content.scrollWidth - content.clientWidth;
+
+        btnLeft.classList.toggle('disabled', scrollLeft <= 0);
+        btnRight.classList.toggle('disabled', scrollLeft >= maxScroll - 1);
+    };
+
+    btnLeft.addEventListener('click', () => {
+        content.scrollBy({ left: -240, behavior: 'smooth' });
+    });
+
+    btnRight.addEventListener('click', () => {
+        content.scrollBy({ left: 240, behavior: 'smooth' });
+    });
+
+    content.addEventListener('scroll', updateButtons);
+
+    updateButtons();
+});
