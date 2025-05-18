@@ -26,7 +26,7 @@ items.forEach((item) => {
         return `
         <a href="${i.url}" class="section-child">
             <div class="item-image">
-                <img src="${i.img===""?"/resources/science/EQ.png":i.img}">
+                <img src="${i.img===""?"../resources/science/EQ.png":i.img}">
             </div>
             <div class="item-title">${i.name}</div>
             <div class="item-content">${i.content}</div>
@@ -39,13 +39,13 @@ items.forEach((item) => {
     <div class="section-title">${item.name}</div>
     <div>
         <button class="scroll-btn left">
-            <img src="/resources/icon-arrow-left.svg">
+            <img src="../resources/icon-arrow-left.svg">
         </button>
         <div class="section-content">
         ${childrenHTML}
         </div>
         <button class="scroll-btn right">
-            <img src="/resources/icon-arrow-right.svg">
+            <img src="../resources/icon-arrow-right.svg">
         </button>
     </div>
     `;
