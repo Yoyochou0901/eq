@@ -48,7 +48,7 @@ hr {
 
 .main-content {
     width: 80%;
-    margin: 2% auto;
+    margin: 0 auto;
 
     max-width: var(--content-width);
 }
@@ -154,6 +154,7 @@ div.image-block {
         margin-left: calc(-50vw + 50%);
         min-height: 250px;
         overflow: hidden;
+        padding: 15px 0;
 
         background-color: #60aaff20;
 
@@ -162,7 +163,7 @@ div.image-block {
         }
 
         .section-title {
-            margin: 20px auto 35px auto;
+            margin: 0 auto 35px auto;
             font-size: 32px;
             font-weight: 500;
 
@@ -199,7 +200,7 @@ div.image-block {
                     box-sizing: border-box;
                     width: 200px;
                     height: 300px;
-                    border: 2px solid #fff;
+                    border: 3px solid #fff;
                     border-radius: 20px;
                     margin: 10px 20px;
                     display: block;
@@ -208,20 +209,11 @@ div.image-block {
                     background-color: #00000030;
 
                     &:hover {
-                        border: 5px solid #ffc900;
+                        border-color: #ffc900;
 
                         .item-image img {
                             transform: scale(1.1);
                         }
-
-                        .item-title,.item-content {
-                            margin: 3px 10px;
-                        }
-
-                        .item-image {
-                            margin-top: 7px;
-                        }
-
                     }
 
                     .item-image {
