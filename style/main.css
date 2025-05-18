@@ -210,7 +210,7 @@ div.image-block {
 
                     &:hover {
                         border-color: #ffc900;
-                        box-shadow: 0 0 10px #ff0;
+                        box-shadow: 0 0 10px #ffc900;
 
                         .item-image img {
                             transform: scale(1.1);
