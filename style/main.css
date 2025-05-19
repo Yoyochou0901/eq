@@ -112,7 +112,8 @@ p {
         align-items: center;
         color: #ccc;
         /* width: 90%; */
-        min-width: 200px;
+        max-height: 650px;
+        max-width: 650px;
         margin: 0 auto;
 
         .content {
@@ -122,10 +123,12 @@ p {
         img {
             transition: all 0.5s ease;
             border-radius: 8px;
-            max-height: 600px;
+            max-height: 100%;
             max-width: 100%;
             height: auto;
             width: auto;
+            min-height: 200px;
+            min-width: 200px;
             display: block;
             margin: 3px auto;
 
