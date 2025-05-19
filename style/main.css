@@ -48,13 +48,13 @@ hr {
 
 .main-content {
     width: 80%;
-    margin: 0 auto;
+    margin: 50px auto;
 
     max-width: var(--content-width);
 }
 
 .body-content {
-    box-shadow: 0px 0px 3px #000000;
+    box-shadow: 0 2px 5px #000000;
     background-color: #00000040;
     padding: 10px;
 }
