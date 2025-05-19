@@ -108,7 +108,7 @@ div.image-block {
         margin: 0 auto;
 
         .image-container {
-            flex: 1 1 200px;
+            flex: 1;
             order: 1;
             padding: 5px;
             border: #999 solid 1px;
@@ -117,6 +117,7 @@ div.image-block {
             align-items: center;
             color: #ccc;
             /* width: 90%; */
+            min-width: 200px;
             margin: 0 auto;
 
             .content {
