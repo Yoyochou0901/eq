@@ -3,7 +3,7 @@ const items = [
         name: "地震", children: [
             { name: "震源？震央？", content: "地震相關的常見名詞解釋", img: "", url: "1-1.html" },
             { name: "P波、S波、表面波？", content: "地震波的種類", img: "", url: "" },
-            { name: "震度5強、6弱，是什麼等級", content: "台灣和各國的震度分級", img: "", url: "" },
+            { name: "震度5強、6弱，是什麼等級", content: "台灣和各國的震度分級", img: "", url: "1-3.html" },
             { name: "不要再什麼規模前都加上芮氏了", content: "地震規模的種類", img: "", url: "" },
             { name: "地震警報 快趴下！", content: "地震速報的原理", img: "", url: "" },
             { name: "直下型地震、海溝型地震？", content: "地震的類型", img: "", url: "" },
