@@ -137,6 +137,7 @@ p {
             width: auto;
             display: block;
             margin: auto;
+            overflow: hidden;
 
             &:hover {
                 transform: scale(1.05);
