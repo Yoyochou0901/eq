@@ -136,7 +136,6 @@ p {
             min-width: 200px;
             display: block;
             margin: auto;
-            object-fit: contain;
 
             &:hover {
                 transform: scale(1.05);
