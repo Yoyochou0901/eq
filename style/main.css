@@ -132,10 +132,9 @@ p {
             border-radius: 8px;
             max-height: 100%;
             max-width: 100%;
+            min-width: 300px;
             height: auto;
             width: auto;
-            min-height: 200px;
-            min-width: 200px;
             display: block;
             margin: auto;
 
