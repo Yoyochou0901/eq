@@ -59,6 +59,16 @@ hr {
     padding: 10px;
     overflow: hidden;
     word-break: break-word;
+
+    a {
+        color: #0ef;
+        text-decoration: none;
+
+        &:hover {
+            color: #fd0;
+            text-decoration: underline dotted;
+        }
+    }
 }
 
 #main {
