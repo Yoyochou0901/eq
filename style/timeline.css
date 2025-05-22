@@ -36,13 +36,13 @@
     a {
         display: block;
         text-decoration: none;
-        color: inherit;
+        color: white;
         padding: 10px;
         border-radius: 10px;
-        transition: all 0.5s ease;
 
         &::after {
             content: '';
+            transition: all 0.3s ease;
             position: absolute;
             width: 12px;
             height: 12px;
@@ -51,15 +51,14 @@
             top: 5px;
             border-radius: 50%;
             z-index: 1;
-            transition: all 0.5s ease;
         }
     }
 
     &:hover {
-        color: #ffdd00;
 
         a {
             text-shadow: 3px 3px 5px #00000080;
+            color: #ffdd00;
 
             &::after {
                 background-color: #ffdd00;
