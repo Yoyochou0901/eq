@@ -16,7 +16,7 @@ const items = [
             { name: "海嘯是怎麼形成的", content: "海嘯的成因", img: "", url: "" },
             { name: "海嘯來前海水一定會後退嗎", content: "海嘯常見的迷思", img: "", url: "" },
             { name: "1 公尺的海嘯也有危險嗎", content: "海嘯的破壞力", img: "", url: "" },
-            { name: "台灣也會有海嘯嗎", content: "過去的海嘯紀錄和海嘯風險", img: "", url: "" },
+            { name: "台灣也會有海嘯嗎", content: "台灣過去的海嘯紀錄和未來可能發生的海嘯", img: "", url: "" },
         ]
     },
 ]
