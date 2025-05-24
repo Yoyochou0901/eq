@@ -75,6 +75,13 @@ hr {
         }
     }
 
+    h2 {
+        border-left: 5px #fff solid;
+        border-bottom: 1px #ffffff80 solid;
+        padding: 10px 20px;
+        line-height: 1;
+    }
+
     table {
         width: 100%;
         border-collapse: collapse;
