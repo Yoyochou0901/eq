@@ -51,6 +51,31 @@ hr {
     background-color: #ffffff80;
 }
 
+blockquote {
+    color: #ddd;
+    position: relative;
+    padding: 0 30px;
+
+    &::before,
+    &::after {
+        position: absolute;
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 1;
+    }
+
+    &::before{
+        top: 0;
+        left: 0;
+        content: open-quote;
+    }
+    &::after {
+        bottom: 0;
+        right: 0;
+        content: close-quote;
+    }
+}
+
 .main-content {
     width: 80%;
     margin: 50px auto;
@@ -61,7 +86,7 @@ hr {
 .body-content {
     box-shadow: 0 2px 5px #000000;
     background-color: #00000040;
-    padding: 10px;
+    padding: 10px 20px;
     overflow: hidden;
     word-break: break-word;
 
