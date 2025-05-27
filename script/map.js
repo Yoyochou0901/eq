@@ -9,9 +9,6 @@ var map = L.map("map", {
   updateWhenIdle: false,
 });
 
-let photoLayer = null;
-let taiwanLayer = null;
-let worldLayer = null;
 let isPhotoMode = true;
 
 function loadPhoto() {
@@ -23,19 +20,27 @@ function loadPhoto() {
   console.info("Loaded Photo Layer");
 }
 
-function loadWorldMap(styleOptions) {
+function loadWorldMap() {
   return fetch("../resources/geodata/world.json")
     .then((response) => response.json())
     .then((geojsonData) => {
-      if (worldLayer) {
-        map.removeLayer(worldLayer);
-      }
-      worldLayer = L.geoJSON(geojsonData, {
-        style: styleOptions || {
+      var styleOptions = {}
+      if (isPhotoMode) {
+        styleOptions = {
+          color: "#AAAAAA",
+          weight: 2,
+          fillColor: "#000000",
+          fillOpacity: 0.3
+        }
+      } else {
+        styleOptions = {
           weight: 0,
           fillColor: "#353535",
           fillOpacity: 1,
-        },
+        }
+      }
+      worldLayer = L.geoJSON(geojsonData, {
+        style: styleOptions
       }).addTo(map);
       console.info("Loaded World Map");
     });
@@ -45,9 +50,6 @@ function loadTaiwanMap() {
   return fetch("../resources/geodata/tw_area.geojson")
     .then((response) => response.json())
     .then((geojsonData) => {
-      if (taiwanLayer) {
-        map.removeLayer(taiwanLayer);
-      }
       taiwanLayer = L.geoJSON(geojsonData, {
         style: {
           color: "#CCCCCC",
@@ -75,46 +77,26 @@ function loadFaultData() {
       console.info("Loaded Fault Data");
     });
 }
-
-function resetMapStyle() {
-  if (isPhotoMode) {
-    loadPhoto();
-    loadWorldMap({
-      color: "#AAAAAA",
-      weight: 2,
-      fillColor: "#000000",
-      fillOpacity: 0.3
-    });
-  } else {
-    loadTaiwanMap();
-    loadWorldMap({
-      weight: 0,
-      fillColor: "#353535",
-      fillOpacity: 1,
-    });
-  }
+function loadMap() {
+  map.eachLayer((layer) => {
+    map.removeLayer(layer);
+  });
+  loadWorldMap()
+    .then(() => isPhotoMode ? loadPhoto() : loadTaiwanMap())
+    .then(() => loadFaultData())
+    .catch((error) => console.error("載入失敗：", error));
 }
 
+loadMap();
 
-function toggleBaseLayer() {
-  isPhotoMode = !isPhotoMode;
+document.querySelectorAll('input[name="mapType"]').forEach((input) => {
+  input.addEventListener('change', (e) => {
+    const selected = e.target.value;
+    isPhotoMode = (selected === "1");
+    loadMap();
+  });
+});
 
-  if (photoLayer) {
-    map.removeLayer(photoLayer);
-    photoLayer = null;
-  }
-  if (taiwanLayer) {
-    map.removeLayer(taiwanLayer);
-    taiwanLayer = null;
-  }
-  resetMapStyle();
-}
-
-loadWorldMap()
-  .then(() => loadPhoto())
-  .then(() => loadFaultData())
-  .then(() => resetMapStyle())
-  .catch((error) => console.error("載入失敗：", error));
 
 L.Control.CustomControls = L.Control.extend({
   onAdd: function () {

@@ -18,7 +18,18 @@
     <script>loadNav(1, "fault");</script>
     <div class="map-container">
         <div class="map" id="map"></div>
-        <div class="map-content">123</div>
+        <div class="map-content">
+            <div>
+                <label for="photo">
+                    <input type="radio" name="mapType" id="photo" value="1" checked>
+                    空拍
+                </label>
+                <label for="geojson">
+                    <input type="radio" name="mapType" id="geojson" value="2">
+                    Geojson
+                </label>
+            </div>
+        </div>
     </div>
     <script src="../script/map.js" id="map"></script>
 </body>
