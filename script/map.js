@@ -120,22 +120,18 @@ L.Control.CustomControls = L.Control.extend({
   onAdd: function () {
     const container = L.DomUtil.create("div", "leaflet-bar leaflet-control-custom");
 
-    // Zoom in button
     const zoomIn = L.DomUtil.create("button", "", container);
     zoomIn.innerHTML = "+";
     zoomIn.title = "放大";
     zoomIn.onclick = () => map.zoomIn();
 
-    // Zoom out button
     const zoomOut = L.DomUtil.create("button", "", container);
     zoomOut.innerHTML = "−";
     zoomOut.title = "縮小";
     zoomOut.onclick = () => map.zoomOut();
     return container;
   },
-  onRemove: function () {
-    // Nothing to clean up here
-  },
+  onRemove: function () { },
 });
 
 L.control.customControls = function (opts) {
