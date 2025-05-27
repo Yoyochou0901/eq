@@ -207,7 +207,7 @@ nav {
         }
     }
 
-    #menu #menu-toggle {
+    #menu-toggle {
         transition: all 1s ease;
         z-index: 2;
         position: fixed;
