@@ -20,9 +20,31 @@
 }
 
 .map-content {
+    width: 400px;
     border-left: #fff solid 5px;
     margin-top: 50px;
-    padding: 10px;
+    padding: 20px;
+
+    .checkboxs {
+        padding: 10px 20px;
+        width: 100%;
+        background-color: #303030;
+        border-radius: 5px;
+        border: 1px solid #888;
+        font-size: 16px;
+        color: #ccc;
+
+        label {
+            margin-right: 10px;
+            font-size: 20px;
+            color: #fff;
+            display: inline-block;
+        }
+
+        input {
+            accent-color: #555;
+        }
+    }
 }
 
 @media screen and (max-width: 800px) {

@@ -19,7 +19,8 @@
     <div class="map-container">
         <div class="map" id="map"></div>
         <div class="map-content">
-            <div>
+            <div class="checkboxs">
+                地圖類型<br>
                 <label for="photo">
                     <input type="radio" name="mapType" id="photo" value="1" checked>
                     空拍
@@ -27,7 +28,16 @@
                 <label for="geojson">
                     <input type="radio" name="mapType" id="geojson" value="2">
                     Geojson
+                </label><br>
+                斷層資料來源<br>
+                <label for="fault1">
+                    <input type="radio" name="fault" id="fault1" value="1" checked>
+                    經濟部地礦中心
                 </label>
+                <label for="fault2">
+                    <input type="radio" name="fault" id="fault2" value="2">
+                    TEM 台灣地震模型
+                </label><br>
             </div>
         </div>
     </div>
