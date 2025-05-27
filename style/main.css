@@ -394,10 +394,12 @@ p {
 
 /* 斷層頁面地圖 */
 .map {
-    /* position: fixed; */
+    position: absolute !important;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: calc(100vh - 50px);
-    background-color: transparent   ;
+    height: 100vh;
+    background-color: transparent;
     z-index: 1;
     transition: all 0.5s;
 
