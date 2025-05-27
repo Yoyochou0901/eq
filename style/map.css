@@ -26,13 +26,20 @@
     padding: 20px;
 
     .checkboxs {
-        padding: 10px 20px;
+        padding: 0 20px;
         width: 100%;
         background-color: #303030;
         border-radius: 5px;
         border: 1px solid #888;
         font-size: 16px;
         color: #ccc;
+
+        .section {
+            padding: 10px 0;
+            &:not(:last-child){
+                border-bottom: 1px solid #555;
+            }
+        }
 
         label {
             margin-right: 10px;
