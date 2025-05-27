@@ -25,6 +25,20 @@
     padding: 10px;
 }
 
+@media screen and (max-width: 800px) {
+    .map-content {
+        margin-top: 0;
+    }
+
+    .map-container {
+        display: block;
+    }
+
+    .map {
+        width: 100%;
+    }
+}
+
 .leaflet-control-custom {
     margin-top: 60px !important;
 

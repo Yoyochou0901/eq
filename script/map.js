@@ -68,7 +68,7 @@ function loadFaultData() {
       L.geoJSON(geojsonData, {
         style: {
           color: "#FF0000",
-          weight: 3,
+          weight: 5,
           opacity: 1,
         },
       }).addTo(map);
