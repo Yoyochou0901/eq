@@ -64,11 +64,12 @@ blockquote {
         line-height: 1;
     }
 
-    &::before{
+    &::before {
         top: 0;
         left: 0;
         content: open-quote;
     }
+
     &::after {
         bottom: 0;
         right: 0;
@@ -391,6 +392,7 @@ p {
     }
 }
 
+/* 斷層頁面地圖 */
 .map {
     /* position: fixed; */
     width: 100%;
@@ -398,4 +400,8 @@ p {
     background-color: #202020;
     z-index: 1;
     transition: all 0.5s;
+
+    * {
+        transition: unset;
+    }
 }
