@@ -113,6 +113,12 @@ function loadFaultData() {
             weight: 5,
             opacity: 1,
           }
+        },
+        onEachFeature: function (feature, layer) {
+          // 假設你在 geojson 中有 name 屬性
+          if (feature.properties && feature.properties.Name) {
+            layer.bindPopup(feature.properties.Name);
+          }
         }
       }).addTo(map);
       console.info("Loaded Fault Data");
