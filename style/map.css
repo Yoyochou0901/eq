@@ -33,6 +33,7 @@ body {
     border-left: #fff solid 5px;
     padding: 20px;
     padding-top: 80px;
+    overflow: auto;
 
     .checkboxs {
         padding: 0 20px;
