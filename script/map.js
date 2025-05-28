@@ -66,7 +66,7 @@ function loadTaiwanMap() {
 
 function loadFaultData() {
   var url = "";
-  faultSource === 0? url = "../resources/geodata/fault.geojson" : url = "../resources/geodata/fault2.geojson";
+  faultSource === 0 ? url = "../resources/geodata/fault.geojson" : url = "../resources/geodata/fault2.geojson";
   return fetch(url)
     .then((response) => response.json())
     .then((geojsonData) => {
@@ -80,6 +80,7 @@ function loadFaultData() {
       console.info("Loaded Fault Data");
     });
 }
+
 function loadMap() {
   map.eachLayer((layer) => {
     map.removeLayer(layer);
