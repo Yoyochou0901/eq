@@ -10,6 +10,7 @@ var map = L.map("map", {
 });
 
 let isPhotoMode = true;
+let faultSource = 0;
 
 function loadPhoto() {
   photoLayer = L.tileLayer('https://wmts.nlsc.gov.tw/wmts/PHOTO2/default/GoogleMapsCompatible/{z}/{y}/{x}', {
@@ -64,7 +65,9 @@ function loadTaiwanMap() {
 }
 
 function loadFaultData() {
-  return fetch("../resources/geodata/fault.geojson")
+  var url = "";
+  faultSource === 0? url = "../resources/geodata/fault.geojson" : url = "../resources/geodata/fault2.geojson";
+  return fetch(url)
     .then((response) => response.json())
     .then((geojsonData) => {
       L.geoJSON(geojsonData, {
@@ -89,6 +92,11 @@ function loadMap() {
 
 loadMap();
 
+// TODO //
+// 重構重載地圖邏輯 //
+// 現行：任何變更刪除全部圖層重新 fetch //
+// 構想：僅刪除變更部分圖層 //
+
 document.querySelectorAll('input[name="mapType"]').forEach((input) => {
   input.addEventListener('change', (e) => {
     const selected = e.target.value;
@@ -97,6 +105,13 @@ document.querySelectorAll('input[name="mapType"]').forEach((input) => {
   });
 });
 
+document.querySelectorAll('input[name="faultSource"]').forEach((input) => {
+  input.addEventListener('change', (e) => {
+    const selected = e.target.value;
+    selected === "1" ? faultSource = 0 : faultSource = 1;
+    loadMap();
+  });
+});
 
 L.Control.CustomControls = L.Control.extend({
   onAdd: function () {
