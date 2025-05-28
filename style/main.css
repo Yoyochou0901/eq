@@ -227,6 +227,29 @@ p {
     }
 }
 
+.info-card {
+    display: block;
+    background-color: #ffffff30;
+    border-radius: 10px;
+    border-left: #fff solid 10px;
+    width: 100%;
+    min-height: 100px;
+    margin: 20px auto;
+    padding: 5px 10px;
+    text-decoration: none;
+
+    &:hover {
+        cursor: pointer;
+        transform: translate(-5px, -5px);
+        box-shadow: 5px 5px 10px #00000030;
+    }
+
+    .card-title {
+        font-size: 24px;
+        font-weight: 700;
+    }
+}
+
 .hr {
     position: relative;
 
