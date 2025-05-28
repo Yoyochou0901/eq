@@ -1,8 +1,12 @@
+body {
+    height: 100%;
+}
+
 .map-container {
     display: flex;
     position: absolute;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     top: 0;
     left: 0;
 }
@@ -54,7 +58,7 @@
     }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
     .map-content {
         margin-top: 0;
     }
