@@ -5,15 +5,16 @@ body {
 .map-container {
     display: flex;
     position: absolute;
-    width: 100%;
+    width: calc(100% - 400px);
     height: 100%;
     top: 0;
     left: 0;
 }
 
 .map {
+    position: relative;
     height: 100%;
-    width: calc(100% - 400px);
+    width: 100%;
     background-color: #222;
     z-index: 1;
     transition: all 0.5s;
@@ -24,10 +25,14 @@ body {
 }
 
 .map-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
     width: 400px;
     border-left: #fff solid 5px;
-    margin-top: 50px;
     padding: 20px;
+    padding-top: 80px;
 
     .checkboxs {
         padding: 0 20px;
@@ -40,7 +45,8 @@ body {
 
         .section {
             padding: 10px 0;
-            &:not(:last-child){
+
+            &:not(:last-child) {
                 border-bottom: 1px solid #555;
             }
         }
@@ -54,6 +60,68 @@ body {
 
         input {
             accent-color: #555;
+        }
+    }
+}
+
+.label {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    right: 0;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    background-color: #202020aa;
+    backdrop-filter: blur(10px);
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #fff;
+
+    &:not(.display) {
+        opacity: 0;
+    }
+
+    .label-title {
+        font-size: 18px;
+        font-weight: 600;
+        border-bottom: 1px solid #888;
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+    }
+
+    .label-subtitle {
+        text-align: center;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .label-child {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+
+        .label-icon {
+            width: 25px;
+            height: 6px;
+            border-radius: 3px;
+            background-color: #fff;
+
+            &.purple {
+                background-color: #c900ff;
+            }
+
+            &.red {
+                background-color: #ff0000;
+            }
+
+            &.orange {
+                background-color: #ff8000;
+            }
+
+            &.yellow {
+                background-color: #ffc900;
+            }
         }
     }
 }

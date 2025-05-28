@@ -18,30 +18,56 @@
     <script>loadNav(1, "fault");</script>
     <div class="map-container">
         <div class="map" id="map"></div>
-        <div class="map-content">
-            <div class="checkboxs">
-                <div class="section">
-                    地圖類型<br>
-                    <label for="photo">
-                        <input type="radio" name="mapType" id="photo" value="1" checked>
-                        空拍
-                    </label>
-                    <label for="geojson">
-                        <input type="radio" name="mapType" id="geojson" value="2">
-                        Geojson
-                    </label>
+            <div class="label" id="label-1">
+                <div class="label-title">圖例</div>
+                <div class="label-child">
+                    <span class="label-icon red"></span><span class="label-content">第一類活動斷層</span>
                 </div>
-                <div class="section">
-                    斷層資料來源<br>
-                    <label for="fault1">
-                        <input type="radio" name="faultSource" id="fault1" value="1" checked>
-                        經濟部地礦中心活動斷層
-                    </label>
-                    <label for="fault2">
-                        <input type="radio" name="faultSource" id="fault2" value="2">
-                        TEM 台灣地震模型 2020
-                    </label>
+                <div class="label-child">
+                    <span class="label-icon orange"></span><span class="label-content">第二類活動斷層</span>
                 </div>
+            </div>
+            <div class="label display" id="label-2">
+                <div class="label-title">圖例</div>
+                <div class="label-subtitle">未來 30 年內發震機率</div>
+                <div class="label-child">
+                    <span class="label-icon purple"></span><span class="label-content">30% 以上</span>
+                </div>
+                <div class="label-child">
+                    <span class="label-icon red"></span><span class="label-content">10% ~ 30%</span>
+                </div>
+                <div class="label-child">
+                    <span class="label-icon orange"></span><span class="label-content">3% ~ 10%</span>
+                </div>
+                <div class="label-child">
+                    <span class="label-icon yellow"></span><span class="label-content">3% 以下</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="map-content">
+        <div class="checkboxs">
+            <div class="section">
+                地圖類型<br>
+                <label for="photo">
+                    <input type="radio" name="mapType" id="photo" value="1" checked>
+                    空拍
+                </label>
+                <label for="geojson">
+                    <input type="radio" name="mapType" id="geojson" value="2">
+                    Geojson
+                </label>
+            </div>
+            <div class="section">
+                斷層資料來源<br>
+                <label for="fault1">
+                    <input type="radio" name="faultSource" id="fault1" value="1" checked>
+                    經濟部地礦中心活動斷層
+                </label>
+                <label for="fault2">
+                    <input type="radio" name="faultSource" id="fault2" value="2">
+                    TEM 台灣地震模型 2020
+                </label>
             </div>
         </div>
     </div>

@@ -116,10 +116,27 @@ function loadFaultData() {
         }
       }).addTo(map);
       console.info("Loaded Fault Data");
+      updateLabel();
     });
 }
 
+function updateLabel() {
+  const label1 = document.getElementById("label-1");
+  const label2 = document.getElementById("label-2");
+
+  if (faultSource === 0) {
+    label1.classList.add("display");
+  } else {
+    label2.classList.add("display");
+  }
+}
+
 function loadMap() {
+  const labels = document.getElementsByClassName("label");
+  for (let i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("display");
+  }
+
   map.eachLayer((layer) => {
     map.removeLayer(layer);
   });
