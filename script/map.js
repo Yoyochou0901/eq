@@ -1,4 +1,4 @@
-var map = L.map("map", {
+const map = L.map("map", {
   center: [23.6, 121],
   zoom: 8.25,
   minZoom: 7,
@@ -9,11 +9,17 @@ var map = L.map("map", {
   updateWhenIdle: false,
 });
 
+let layers = {
+  photo: null,
+  world: null,
+  taiwan: null,
+  fault: null
+};
 let isPhotoMode = true;
 let faultSource = 0;
 
 function loadPhoto() {
-  photoLayer = L.tileLayer('https://wmts.nlsc.gov.tw/wmts/PHOTO2/default/GoogleMapsCompatible/{z}/{y}/{x}', {
+  layers.photo = L.tileLayer('https://wmts.nlsc.gov.tw/wmts/PHOTO2/default/GoogleMapsCompatible/{z}/{y}/{x}', {
     maxNativeZoom: 20,
     maxZoom: 20,
     minZoom: 7
@@ -25,7 +31,7 @@ function loadWorldMap() {
   return fetch("../resources/geodata/world.json")
     .then((response) => response.json())
     .then((geojsonData) => {
-      var styleOptions = {}
+      let styleOptions = {}
       if (isPhotoMode) {
         styleOptions = {
           color: "#AAAAAA",
@@ -40,7 +46,7 @@ function loadWorldMap() {
           fillOpacity: 1,
         }
       }
-      worldLayer = L.geoJSON(geojsonData, {
+      layers.world = L.geoJSON(geojsonData, {
         style: styleOptions
       }).addTo(map);
       console.info("Loaded World Map");
@@ -51,7 +57,7 @@ function loadTaiwanMap() {
   return fetch("../resources/geodata/tw_area.geojson")
     .then((response) => response.json())
     .then((geojsonData) => {
-      taiwanLayer = L.geoJSON(geojsonData, {
+      layers.taiwan = L.geoJSON(geojsonData, {
         style: {
           color: "#CCCCCC",
           weight: 1,
@@ -65,12 +71,15 @@ function loadTaiwanMap() {
 }
 
 function loadFaultData() {
-  var url = "";
-  faultSource === 0 ? url = "../resources/geodata/fault.geojson" : url = "../resources/geodata/fault2.geojson";
+
+  const url = faultSource === 0
+    ? "../resources/geodata/fault.geojson"
+    : "../resources/geodata/fault2.geojson";
+    
   return fetch(url)
     .then((response) => response.json())
     .then((geojsonData) => {
-      L.geoJSON(geojsonData, {
+      layers.fault = L.geoJSON(geojsonData, {
         style: {
           color: "#FF0000",
           weight: 5,
