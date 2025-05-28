@@ -79,9 +79,15 @@ blockquote {
 
 .main-content {
     width: 80%;
+    min-width: 350px;
+    max-width: var(--content-width);
     margin: 50px auto;
 
-    max-width: var(--content-width);
+    @media screen and (max-width: 800px) {
+        & {
+            width: calc(100% - 50px);
+        }
+    }
 }
 
 .body-content {
