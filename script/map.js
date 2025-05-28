@@ -75,16 +75,45 @@ function loadFaultData() {
   const url = faultSource === 0
     ? "../resources/geodata/fault.geojson"
     : "../resources/geodata/fault2.geojson";
-    
+
   return fetch(url)
     .then((response) => response.json())
     .then((geojsonData) => {
       layers.fault = L.geoJSON(geojsonData, {
-        style: {
-          color: "#FF0000",
-          weight: 5,
-          opacity: 1,
-        },
+        style: function (feature) {
+          let color = "";
+          if (faultSource === 0) {
+            switch (feature.properties.Type) {
+              case "第一類活動斷層":
+                color = "#ff0000";
+                break;
+              case "第二類活動斷層":
+                color = "#ff8000";
+                break;
+            }
+          } else if (faultSource === 1) {
+            switch (feature.properties.Probability) {
+              case "小於3%":
+                color = "#ffc900";
+                break
+              case "3~10%":
+                color = "#ff8000";
+                break
+              case "10~30%":
+                color = "#ff0000";
+                break
+              case "30%以上":
+                color = "#c900ff";
+                break
+            }
+          }
+
+          return {
+            color: color,
+            weight: 5,
+            opacity: 1,
+          }
+        }
       }).addTo(map);
       console.info("Loaded Fault Data");
     });
