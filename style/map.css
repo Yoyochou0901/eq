@@ -126,18 +126,23 @@ body {
     }
 }
 
-@media screen and (max-width: 1000px) {
-    .map-content {
-        margin-top: 0;
-    }
-
+@media screen and (max-width: 800px) {
     .map-container {
-        display: block;
+        width: 100%;
+        height: calc(100% - 200px);
     }
 
-    .map {
+    .map-content {
+        border-left: unset;
+        border-top: #fff solid 5px;
+        left: 0;
+        top: calc(100% - 200px);
         width: 100%;
+        height: unset;
+        padding: 20px;
+        overflow: auto;
     }
+
 }
 
 .leaflet-control-custom {
