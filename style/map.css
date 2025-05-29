@@ -32,11 +32,12 @@ body {
     width: 400px;
     border-left: #fff solid 5px;
     padding: 20px;
-    padding-top: 80px;
+    padding-top: 60px;
     overflow: auto;
 
     .checkboxs {
         padding: 0 20px;
+        margin: 20px 0;
         width: 100%;
         background-color: #303030;
         border-radius: 5px;
@@ -169,6 +170,38 @@ body {
 
         &:hover {
             background-color: #353535aa;
+        }
+    }
+}
+
+.leaflet-popup-tip {
+    background-color: #222;
+}
+
+.leaflet-popup-content-wrapper {
+    background-color: #222;
+    color: #fff;
+
+    .popup-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #8cf;
+        margin-bottom: 3px;
+    }
+
+    .popup-subtitle {
+        font-size: 14px;
+        font-weight: 500;
+        color: #8cf;
+    }
+
+    .popup-condition {
+        font-size: 14px;
+        font-weight: 500;
+        color: #fff;
+
+        .condition-title {
+            color: #8cf;
         }
     }
 }

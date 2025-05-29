@@ -111,14 +111,44 @@ function loadFaultData() {
           return {
             color: color,
             weight: 5,
-            opacity: 1,
+            opacity: isPhotoMode ? 0.8 : 1,
+            className: "leaflet-fault-line",
           }
         },
         onEachFeature: function (feature, layer) {
-          // 假設你在 geojson 中有 name 屬性
-          if (feature.properties && feature.properties.Name) {
-            layer.bindPopup(feature.properties.Name);
+          console.log(feature.properties)
+          let pop = {
+            name: null,
+            subtitle: null,
+            condition: null,
           }
+          if (feature.properties) {
+            if (feature.properties.Name) {
+              pop.name = feature.properties.Name;
+            }
+            if (faultSource === 0) {
+              if (feature.properties.Type) {
+                pop.subtitle = feature.properties.Type;
+              }
+              // if (feature.properties.Condition) {
+              //   pop.condition = feature.properties.Condition;
+              // }
+            } else if (faultSource === 1) {
+              if (feature.properties.Probability) {
+                pop.condition = `<span class="condition-title">未來 30 年內斷層發震機率：</span>${feature.properties.Probability}`;
+              }
+            }
+          }
+
+          popFormat = ``;
+          popFormat += `<div class="popup-title">${pop.name}</div>`;
+          if (pop.subtitle) {
+            popFormat += `<div class="popup-subtitle">${pop.subtitle}</div>`;
+          }
+          if (pop.condition) {
+            popFormat += `<div class="popup-condition">${pop.condition}</div>`;
+          }
+          layer.bindPopup(popFormat);
         }
       }).addTo(map);
       console.info("Loaded Fault Data");
