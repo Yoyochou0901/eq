@@ -81,7 +81,7 @@ blockquote {
     width: 80%;
     min-width: 350px;
     max-width: var(--content-width);
-    margin: 50px auto;
+    margin: auto;
 
     @media screen and (max-width: 800px) {
         & {
@@ -162,6 +162,11 @@ header {
 
 h1 {
     font-size: 36px;
+
+    .page-title &{
+        font-size: 42px;
+        margin-bottom: 10px;
+    }
 }
 
 h2 {
@@ -170,6 +175,18 @@ h2 {
 
 h3 {
     font-size: 24px;
+}
+
+h4 {
+    font-size: 20px;
+    color: #ccc;
+    margin: 10px 0;
+    font-weight: 400;
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 50px;
 }
 
 p {

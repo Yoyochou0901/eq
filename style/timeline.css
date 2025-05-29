@@ -1,6 +1,6 @@
 .timeline {
     position: relative;
-    margin: 50px auto;
+    margin: 100px auto;
     display: flex;
     flex-flow: column;
     align-items: center;
