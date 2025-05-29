@@ -17,6 +17,7 @@ let layers = {
 };
 let isPhotoMode = true;
 let faultSource = 0;
+let isLoadWorldMap = true;
 
 function loadPhoto() {
   layers.photo = L.tileLayer('https://wmts.nlsc.gov.tw/wmts/PHOTO2/default/GoogleMapsCompatible/{z}/{y}/{x}', {
@@ -28,29 +29,33 @@ function loadPhoto() {
 }
 
 function loadWorldMap() {
-  return fetch("../resources/geodata/world.json")
-    .then((response) => response.json())
-    .then((geojsonData) => {
-      let styleOptions = {}
-      if (isPhotoMode) {
-        styleOptions = {
-          color: "#AAAAAA",
-          weight: 2,
-          fillColor: "#000000",
-          fillOpacity: 0.3
+  if (isLoadWorldMap) {
+    return fetch("../resources/geodata/world.json")
+      .then((response) => response.json())
+      .then((geojsonData) => {
+        let styleOptions = {}
+        if (isPhotoMode) {
+          styleOptions = {
+            color: "#AAAAAA",
+            weight: 2,
+            fillColor: "#000000",
+            fillOpacity: 0.3
+          }
+        } else {
+          styleOptions = {
+            weight: 0,
+            fillColor: "#353535",
+            fillOpacity: 1,
+          }
         }
-      } else {
-        styleOptions = {
-          weight: 0,
-          fillColor: "#353535",
-          fillOpacity: 1,
-        }
-      }
-      layers.world = L.geoJSON(geojsonData, {
-        style: styleOptions
-      }).addTo(map);
-      console.info("Loaded World Map");
-    });
+        layers.world = L.geoJSON(geojsonData, {
+          style: styleOptions
+        }).addTo(map);
+        console.info("Loaded World Map");
+      });
+  } else {
+    return Promise.resolve();
+  }
 }
 
 function loadTaiwanMap() {
@@ -116,7 +121,6 @@ function loadFaultData() {
           }
         },
         onEachFeature: function (feature, layer) {
-          console.log(feature.properties)
           let pop = {
             name: null,
             subtitle: null,
@@ -203,6 +207,16 @@ document.querySelectorAll('input[name="faultSource"]').forEach((input) => {
     selected === "1" ? faultSource = 0 : faultSource = 1;
     loadMap();
   });
+});
+
+let checkBoxIsLoadWorldMap = document.getElementById("isLoadWorldMap");
+checkBoxIsLoadWorldMap.addEventListener('change', (e) => {
+  if (checkBoxIsLoadWorldMap.checked == true) {
+    isLoadWorldMap = true;
+  } else {
+    isLoadWorldMap = false;
+  }
+  loadMap();
 });
 
 L.Control.CustomControls = L.Control.extend({
