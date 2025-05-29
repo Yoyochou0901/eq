@@ -157,13 +157,13 @@ blockquote {
                 gap: 20px;
 
                 .title {
-                    width: 40%;
+                    width: 30%;
                     font-size: 36px;
                     font-weight: 600;
                 }
 
                 .content {
-                    width: 60%;
+                    width: 70%;
                 }
             }
         }
