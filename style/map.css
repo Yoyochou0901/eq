@@ -174,13 +174,11 @@ body {
     }
 }
 
-.leaflet-popup-tip {
-    background-color: #222;
-}
-
+.leaflet-popup-tip,
 .leaflet-popup-content-wrapper {
-    background-color: #222;
+    background-color: #202020ee;
     color: #fff;
+    backdrop-filter: blur(5px);
 
     .popup-title {
         font-size: 18px;
