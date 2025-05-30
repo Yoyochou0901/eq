@@ -272,7 +272,6 @@ p {
 .card-section {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
 
     .card {
         width: 30%;
