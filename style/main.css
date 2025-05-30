@@ -165,7 +165,7 @@ blockquote {
 
                 .content {
                     width: 70%;
-                    font-size: 24px;
+                    font-size: 18px;
                     font-weight: 500;
                     color: #ddd;
                     text-align: right;
@@ -198,6 +198,7 @@ blockquote {
 
             h4 {
                 color: #2cf;
+                font-size: 28px;
             }
         }
 
