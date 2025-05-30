@@ -427,12 +427,10 @@ p {
         overflow: hidden;
         padding: 15px 0;
 
-        background-color: #60aaff20;
+        background-color: #26a2;
 
         &:nth-child(even) {
-            background-color: #ffffff20;
-
-            .section-child {}
+            background-color: #3332;
         }
 
         .section-title {
@@ -478,12 +476,12 @@ p {
                     display: block;
                     text-decoration: none;
                     cursor: pointer;
-                    background: #00000030;
+                    background-color: #5673;
 
                     &:hover {
-                        border-color: #ffc900;
-                        box-shadow: 0 0 15px #ffc900;
-                        background: color-mix(in srgb, #00000030 90%, #ffc90030);
+                        border-color: #0cf;
+                        box-shadow: 0 0 15px #0cfa;
+                        background: color-mix(in srgb, #5673 90%, #0cf);
 
                         .item-image img {
                             transform: scale(1.1);
@@ -536,7 +534,7 @@ p {
                 position: relative;
                 /* transform: translateY(-50%); */
                 z-index: 2;
-                background-color: #ffffffaa;
+                background-color: #2cf;
                 padding: 0;
                 color: #000;
                 border: none;
@@ -545,10 +543,10 @@ p {
                 border-radius: 10px;
                 cursor: pointer;
                 font-size: 24px;
-                backdrop-filter: blur(4px);
+                backdrop-filter: blur(10px);
 
                 img {
-                    margin: 16.5px 0;
+                    margin: 17px 0;
                     width: 30px;
                 }
 
@@ -561,15 +559,15 @@ p {
                 }
 
                 &:hover {
-                    background-color: #ffffff80;
+                    background-color: color-mix(in srgb, #0cf 80%, #0000);
                 }
 
                 &.disabled {
-                    background-color: #ffffff50;
+                    background-color: color-mix(in srgb, #0cf 10%, #0000);
                     cursor: not-allowed;
 
                     &:hover {
-                        background-color: #ffffff50;
+                        background-color: color-mix(in srgb, #0cf 10%, #0000);
                     }
                 }
             }
