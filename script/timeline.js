@@ -1,7 +1,7 @@
 const quakes = [
     { title: "1906年", text: "嘉義梅山　規模 7.1", url: "1906.html" },
     { title: "1920年", text: "花蓮外海　規模 8.2", url: "1920.html" },
-    { title: "1935年", text: "苗栗屯仔腳　規模 7.1", url: "1935.html" },
+    { title: "1935年", text: "苗栗三義　規模 7.1", url: "1935.html" },
     { title: "1941年", text: "嘉義中埔　規模 7.1", url: "1941.html" },
     { title: "1951年", text: "花東縱谷　規模 7.3", url: "1951.html" },
     { title: "1964年", text: "台南白河　規模 6.3", url: "1964.html" },
