@@ -274,7 +274,7 @@ p {
     flex-wrap: wrap;
 
     .card {
-        width: 30%;
+        width: calc((100% / 3) - 20px);
         background: #1c333e;
         border-radius: 10px;
         padding: 20px;
@@ -321,11 +321,11 @@ p {
 
 
         @media screen and (max-width: 1200px) {
-            width: 45%;
+            width: calc((100% / 2) - 20px);
         }
 
         @media screen and (max-width: 650px) {
-            width: 100%;
+            width: calc(100% - 20px);
         }
     }
 }
@@ -431,6 +431,8 @@ p {
 
         &:nth-child(even) {
             background-color: #ffffff20;
+
+            .section-child {}
         }
 
         .section-title {
@@ -470,7 +472,7 @@ p {
                     box-sizing: border-box;
                     width: 200px;
                     height: 300px;
-                    border: 3px solid #fff;
+                    border: 3px solid transparent;
                     border-radius: 20px;
                     margin: 20px;
                     display: block;
