@@ -3,7 +3,11 @@
 @import url("timeline.css");
 
 :root {
-    --content-width: 960px;
+    --content-width: 1200px;
+
+    @media screen and (max-width: 1600px) {
+        --content-width: 960px;
+    }
 
     @media screen and (max-width: 1200px) {
         --content-width: 720px;
@@ -14,7 +18,9 @@
     }
 }
 
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     transition: all 0.3s ease;
 }
@@ -22,7 +28,7 @@
 body,
 html {
     background: linear-gradient(135deg, #222, #022536 75%, #222);
-    background-color: #07394e;
+    background-color: #022536;
     background-repeat: no-repeat;
     background-attachment: fixed;
     margin: 0;
@@ -78,16 +84,10 @@ blockquote {
 }
 
 .main-content {
-    width: 80%;
+    width: calc(100% - 50px);
     min-width: 350px;
     max-width: var(--content-width);
     margin: auto;
-
-    @media screen and (max-width: 800px) {
-        & {
-            width: calc(100% - 50px);
-        }
-    }
 }
 
 .body-content {
@@ -211,6 +211,7 @@ blockquote {
                 .title {
                     text-align: right;
                 }
+
                 .content {
                     text-align: left;
                 }
@@ -266,6 +267,68 @@ h4 {
 
 p {
     font-size: 18px;
+}
+
+.card-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .card {
+        width: 30%;
+        background: #1c333e;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 20px 10px;
+        flex: 0 0 auto;
+        border: transparent solid 2px;
+        cursor: pointer;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+
+        .card-title {
+            font-weight: 600;
+            font-size: 24px;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: #ccc solid 1px;
+        }
+
+        .card-content {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .card-badge {
+            font-weight: 600;
+            font-size: 16px;
+            color: #00aaff;
+            margin-top: auto;
+            text-align: right;
+            align-self: flex-end;
+            padding: 5px 10px;
+            border-radius: 5px;
+            line-height: 1;
+            border: #00aaff 1px solid;
+        }
+
+        &:hover {
+            border: #00aaff solid 2px;
+            background: color-mix(in srgb, #1c333e, #008bd0 10%);
+            box-shadow: 0 0 50px #008bd050;
+            transform: translateY(-5px);
+        }
+
+
+        @media screen and (max-width: 1200px) {
+            width: 45%;
+        }
+
+        @media screen and (max-width: 650px) {
+            width: 100%;
+        }
+    }
 }
 
 .image-section {
