@@ -482,6 +482,7 @@ p {
                         border-color: #0cf;
                         box-shadow: 0 0 15px #0cfa;
                         background: color-mix(in srgb, #5673 90%, #0cf);
+                        transform: translateY(-5px);
 
                         .item-image img {
                             transform: scale(1.1);
