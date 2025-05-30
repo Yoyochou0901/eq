@@ -165,6 +165,10 @@ blockquote {
 
                 .content {
                     width: 70%;
+                    font-size: 24px;
+                    font-weight: 500;
+                    color: #ddd;
+                    text-align: right;
                 }
             }
         }
@@ -205,6 +209,9 @@ blockquote {
 
                 .title {
                     text-align: right;
+                }
+                .content {
+                    text-align: left;
                 }
             }
         }
