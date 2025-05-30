@@ -1,9 +1,8 @@
 const items = [
-    { name: "title", content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, quaerat.", badge: "A", url: "#" },
-    { name: "title", content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, quaerat.", badge: "A", url: "#" },
-    { name: "title", content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, quaerat.", badge: "A", url: "#" },
-    { name: "title", content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, quaerat.", badge: "A", url: "#" },
-    { name: "title", content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, quaerat.", badge: "A", url: "#" },
+    { name: "地震前該做的事", content: "地震來臨前，平時可以做的防震準備", badge: "地震", url: "#" },
+    { name: "地震發生時", content: "地震發生當下，該如何應變", badge: "地震", url: "#" },
+    { name: "地震後", content: "地震發生後，該注意的事", badge: "地震", url: "#" },
+    { name: "海嘯防護", content: "海嘯發生時，如何避難", badge: "海嘯", url: "#" },
 ]
 const preparednessSection = document.getElementById("preparedness-section")
 
