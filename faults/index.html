@@ -48,8 +48,12 @@
         <div class="checkboxs">
             <div class="section">
                 地圖類型<br>
+                <label for="google">
+                    <input type="radio" name="mapType" id="google" value="0" checked>
+                    衛星
+                </label>
                 <label for="photo">
-                    <input type="radio" name="mapType" id="photo" value="1" checked>
+                    <input type="radio" name="mapType" id="photo" value="1">
                     空拍
                 </label>
                 <label for="geojson">
@@ -57,7 +61,7 @@
                     Geojson
                 </label><br>
                 <label for="isLoadWorldMap">
-                    <input type="checkbox" name="isLoadWorldMap" id="isLoadWorldMap" checked>
+                    <input type="checkbox" name="isLoadWorldMap" id="isLoadWorldMap" disabled checked>
                     載入世界地圖
                 </label>
             </div>

@@ -15,9 +15,18 @@ let layers = {
   taiwan: null,
   fault: null
 };
-let isPhotoMode = true;
+let loadMapType = 0;
 let faultSource = 0;
 let isLoadWorldMap = true;
+
+function loadGoogleMap() {
+  layers.google = L.tileLayer('http://mt0.google.com/vt/lyrs=y&x={x}&y={y}&z={z}&s=Ga', {
+    maxNativeZoom: 20,
+    maxZoom: 20,
+    minZoom: 7
+  }).addTo(map);
+  console.info("Loaded Google Map")
+}
 
 function loadPhoto() {
   layers.photo = L.tileLayer('https://wmts.nlsc.gov.tw/wmts/PHOTO2/default/GoogleMapsCompatible/{z}/{y}/{x}', {
@@ -29,12 +38,12 @@ function loadPhoto() {
 }
 
 function loadWorldMap() {
-  if (isLoadWorldMap) {
+  if (isLoadWorldMap && loadMapType != 0) {
     return fetch("../resources/geodata/world.json")
       .then((response) => response.json())
       .then((geojsonData) => {
         let styleOptions = {}
-        if (isPhotoMode) {
+        if (loadMapType === 1) {
           styleOptions = {
             color: "#AAAAAA",
             weight: 2,
@@ -116,7 +125,7 @@ function loadFaultData() {
           return {
             color: color,
             weight: 5,
-            opacity: isPhotoMode ? 0.8 : 1,
+            opacity: loadMapType != 2 ? 0.8 : 1,
             className: "leaflet-fault-line",
           }
         },
@@ -184,7 +193,7 @@ function loadMap() {
     map.removeLayer(layer);
   });
   loadWorldMap()
-    .then(() => isPhotoMode ? loadPhoto() : loadTaiwanMap())
+    .then(() => loadMapType === 0 ? loadGoogleMap() : loadMapType === 1 ? loadPhoto() : loadTaiwanMap())
     .then(() => loadFaultData())
     .catch((error) => console.error("載入失敗：", error));
 }
@@ -199,7 +208,13 @@ loadMap();
 document.querySelectorAll('input[name="mapType"]').forEach((input) => {
   input.addEventListener('change', (e) => {
     const selected = e.target.value;
-    isPhotoMode = (selected === "1");
+    loadMapType = (selected === "0" ? 0 : selected === "1" ? 1 : 2);
+    const cboxIsLoadWorldMap = document.getElementById("isLoadWorldMap")
+    if (loadMapType === 0) {
+      cboxIsLoadWorldMap.disabled = true;
+    } else {
+      cboxIsLoadWorldMap.disabled = false;
+    }
     loadMap();
   });
 });
