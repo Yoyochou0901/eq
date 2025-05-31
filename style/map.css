@@ -179,10 +179,11 @@ body {
     background-color: #202020dd;
     color: #fff;
     backdrop-filter: blur(5px);
+    font-family: "Outfit", "Noto Sans TC", "Noto Sans JP", "Noto Sans CN";
 
     .popup-title {
         font-size: 18px;
-        font-weight: 600;
+        font-weight: 700;
         color: #8cf;
         margin-bottom: 3px;
     }

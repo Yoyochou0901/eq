@@ -121,36 +121,39 @@ function loadFaultData() {
           }
         },
         onEachFeature: function (feature, layer) {
-          let pop = {
+          let popup = {
             name: null,
             subtitle: null,
             condition: null,
           }
           if (feature.properties) {
             if (feature.properties.Name) {
-              pop.name = feature.properties.Name;
+              popup.name = feature.properties.Name;
             }
             if (faultSource === 0) {
               if (feature.properties.Type) {
-                pop.subtitle = feature.properties.Type;
+                popup.subtitle = feature.properties.Type;
               }
               // if (feature.properties.Condition) {
               //   pop.condition = feature.properties.Condition;
               // }
             } else if (faultSource === 1) {
               if (feature.properties.Probability) {
-                pop.condition = `<span class="condition-title">未來 30 年內斷層發震機率：</span>${feature.properties.Probability}`;
+                popup.condition = `<span class="condition-title">斷層種類：　</span>${feature.properties.fault_type}<br>`;
+                popup.condition += `<span class="condition-title">斷層長度：　</span>${feature.properties.length}<br>`;
+                popup.condition += `<span class="condition-title">規模：　　　</span>${feature.properties.magnitude}<br>`;
+                popup.condition += `<span class="condition-title">未來 30 年內斷層發震機率：</span>${feature.properties.probability2}<br>`;
               }
             }
           }
 
           popFormat = ``;
-          popFormat += `<div class="popup-title">${pop.name}</div>`;
-          if (pop.subtitle) {
-            popFormat += `<div class="popup-subtitle">${pop.subtitle}</div>`;
+          popFormat += `<div class="popup-title">${popup.name}</div>`;
+          if (popup.subtitle) {
+            popFormat += `<div class="popup-subtitle">${popup.subtitle}</div>`;
           }
-          if (pop.condition) {
-            popFormat += `<div class="popup-condition">${pop.condition}</div>`;
+          if (popup.condition) {
+            popFormat += `<div class="popup-condition">${popup.condition}</div>`;
           }
           layer.bindPopup(popFormat);
         }
