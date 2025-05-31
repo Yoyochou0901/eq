@@ -386,20 +386,32 @@ p {
         }
     }
 }
+
 .card-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+
+    .info-card {
+        width: calc((100% / 3) - 20px);
+        flex: 0 0 auto;
+
+        @media screen and (max-width: 1200px) {
+            width: calc((100% / 2) - 20px);
+        }
+
+        @media screen and (max-width: 650px) {
+            width: calc(100% - 20px);
+        }
+    }
 }
+
 .info-card {
     display: block;
     background-color: #1c333e;
     border-radius: 10px;
     border-left: #0cf solid 5px;
-    width: 100%;
-    min-height: 100px;
-    margin: auto;
-    padding: 10px 15px;
+    margin: 10px;
+    padding: 5px 15px;
     text-decoration: none;
 
     &:hover {
@@ -409,8 +421,16 @@ p {
     }
 
     .card-title {
-        font-size: 24px;
-        font-weight: 700;
+        font-size: 20px;
+        font-weight: 500;
+        padding: 10px 0;
+        border-bottom: #fff8 1px solid;
+    }
+
+    .card-content {
+        font-size: 16px;
+        color: #ddd;
+        padding: 10px 0;
     }
 }
 
