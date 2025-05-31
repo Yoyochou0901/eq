@@ -27,7 +27,7 @@
 
 body,
 html {
-    background: linear-gradient(135deg, #222, #022536 75%, #222);
+    background: linear-gradient(135deg, #222 -30%, #022536 75%, #222 130%);
     background-color: #022536;
     background-repeat: no-repeat;
     background-attachment: fixed;
