@@ -19,13 +19,13 @@ let loadMapType = 0;
 let faultSource = 0;
 let isLoadWorldMap = true;
 
-function loadGoogleMap() {
-  layers.google = L.tileLayer('http://mt0.google.com/vt/lyrs=y&x={x}&y={y}&z={z}&s=Ga', {
+function loadEsriImagery() {
+  layers.google = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
     maxNativeZoom: 20,
     maxZoom: 20,
     minZoom: 7
   }).addTo(map);
-  console.info("Loaded Google Map")
+  console.info("Loaded ESRI Map")
 }
 
 function loadPhoto() {
@@ -193,7 +193,7 @@ function loadMap() {
     map.removeLayer(layer);
   });
   loadWorldMap()
-    .then(() => loadMapType === 0 ? loadGoogleMap() : loadMapType === 1 ? loadPhoto() : loadTaiwanMap())
+    .then(() => loadMapType === 0 ? loadEsriImagery() : loadMapType === 1 ? loadPhoto() : loadTaiwanMap())
     .then(() => loadFaultData())
     .catch((error) => console.error("載入失敗：", error));
 }
