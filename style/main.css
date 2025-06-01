@@ -160,18 +160,38 @@ blockquote {
 
                 .text {
                     flex: 1;
+                    text-align: right;
 
                     .title {
                         font-size: 36px;
                         font-weight: 600;
-                        text-align: right;
                     }
 
                     .content {
                         font-size: 18px;
                         font-weight: 500;
                         color: #ddd;
-                        text-align: right;
+                    }
+
+                    .link {
+                        display: inline-block;
+                        margin-top: 20px;
+                        background-color: #0cf;
+                        color: #1c333e;
+                        font-size: 20px;
+                        padding: 8px 15px;
+                        border-radius: 10px;
+                        font-weight: 500;
+
+                        .material-symbols-outlined {
+                            transform: rotate(-45deg) translate(3px, -3px);
+                            vertical-align: middle;
+                            margin-left: 5px;
+                        }
+
+                        &:hover {
+                            background-color: color-mix(in srgb, #0cf 70%, #fff);
+                        }
                     }
                 }
 
@@ -283,11 +303,7 @@ blockquote {
             .container {
                 flex-direction: row-reverse;
 
-                .title {
-                    text-align: left;
-                }
-
-                .content {
+                .text {
                     text-align: left;
                 }
             }
@@ -301,14 +317,14 @@ blockquote {
 
                     &:nth-of-type(odd) {
                         flex-direction: column;
+
+                        .text {
+                            text-align: center;
+                        }
                     }
 
                     .text {
-
-                        .title,
-                        .content {
-                            text-align: center;
-                        }
+                        text-align: center;
                     }
 
                     .img {
