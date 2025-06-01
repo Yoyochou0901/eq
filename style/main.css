@@ -118,7 +118,7 @@ blockquote {
     table {
         width: 100%;
         border-collapse: collapse;
-        table-layout: fixed;
+        table-layout: auto;
 
         th,
         td {
@@ -126,6 +126,12 @@ blockquote {
             padding: 8px;
             text-align: center;
             word-break: break-word;
+        }
+
+        &.table2 {
+            td {
+                text-align: left;
+            }
         }
 
         th {
