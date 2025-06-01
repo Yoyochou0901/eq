@@ -47,7 +47,7 @@ html {
 
 a {
     color: #fff;
-    text-decoration: underline dotted;
+    text-decoration: none;
 }
 
 hr {
@@ -187,6 +187,50 @@ blockquote {
                 }
             }
 
+            &.icons {
+                flex-direction: row;
+                justify-content: space-around;
+                gap: 10px;
+
+                .child {
+                    display: block;
+                    cursor: pointer;
+
+                    .icon {
+                        width: 160px;
+                        height: 160px;
+                        border-radius: 50%;
+                        background-color: #1c333e;
+                        text-align: center;
+                        margin-bottom: 20px;
+                        border: transparent 3px solid;
+
+                        .material-symbols-outlined {
+                            font-size: 80px;
+                            line-height: 160px;
+                        }
+                    }
+
+                    &:hover {
+                        .icon {
+                            background-color: color-mix(in srgb, #1c333e 90%, #0cf);
+                            border-color: #0cf;
+                            box-shadow: 0 0 30px #0cf6;
+                        }
+
+                        .name {
+                            color: #0cf;
+                        }
+                    }
+
+                    .name {
+                        font-size: 24px;
+                        font-weight: 600;
+                        text-align: center;
+                    }
+                }
+            }
+
         }
 
         &.main {
@@ -238,6 +282,7 @@ blockquote {
             &.info {
                 .container {
                     flex-direction: column;
+                    gap: 50px;
 
                     &:nth-of-type(odd) {
                         flex-direction: column;
@@ -254,6 +299,11 @@ blockquote {
                     .img {
                         width: 100%;
                     }
+                }
+
+                &.icons {
+                    flex-direction: column;
+                    justify-content: space-around;
                 }
             }
         }
