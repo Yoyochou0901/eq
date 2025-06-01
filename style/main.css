@@ -1,6 +1,7 @@
 @import url("font.css");
 @import url("nav.css");
 @import url("timeline.css");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined");
 
 :root {
     --content-width: 1200px;
