@@ -35,6 +35,16 @@ body {
     padding-top: 60px;
     overflow: auto;
 
+    a {
+        color: #0ef;
+        text-decoration: none;
+
+        &:hover {
+            color: #fd0;
+            text-decoration: underline dotted;
+        }
+    }
+
     .checkboxs {
         padding: 0 20px;
         margin: 20px 0;
