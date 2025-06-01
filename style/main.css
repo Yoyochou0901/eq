@@ -154,22 +154,39 @@ blockquote {
 
             .info & {
                 display: flex;
-                gap: 20px;
+                gap: 100px;
+                align-items: center;
 
-                .title {
-                    width: 30%;
-                    font-size: 36px;
-                    font-weight: 600;
+                .text {
+                    flex: 1;
+
+                    .title {
+                        font-size: 36px;
+                        font-weight: 600;
+                        text-align: right;
+                    }
+
+                    .content {
+                        font-size: 18px;
+                        font-weight: 500;
+                        color: #ddd;
+                        text-align: right;
+                    }
                 }
 
-                .content {
-                    width: 70%;
-                    font-size: 18px;
-                    font-weight: 500;
-                    color: #ddd;
-                    text-align: right;
+                .img {
+                    width: 50%;
+
+                    img {
+                        border-radius: 10px;
+                        object-fit: cover;
+                        width: 100%;
+                        aspect-ratio: 4/3;
+                        box-shadow: 0 0 100px 50px #0cf2;
+                    }
                 }
             }
+
         }
 
         &.main {
@@ -208,11 +225,35 @@ blockquote {
                 flex-direction: row-reverse;
 
                 .title {
-                    text-align: right;
+                    text-align: left;
                 }
 
                 .content {
                     text-align: left;
+                }
+            }
+        }
+
+        @media screen and (max-width: 800px) {
+            &.info {
+                .container {
+                    flex-direction: column;
+
+                    &:nth-of-type(odd) {
+                        flex-direction: column;
+                    }
+
+                    .text {
+
+                        .title,
+                        .content {
+                            text-align: center;
+                        }
+                    }
+
+                    .img {
+                        width: 100%;
+                    }
                 }
             }
         }
