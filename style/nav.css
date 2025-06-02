@@ -112,7 +112,7 @@ nav {
 
     @media screen and (max-width: 800px) {
         & {
-            transition: all ease 1s;
+            transition: all ease-out 1s;
             position: absolute;
             right: 0;
             top: 0;
