@@ -48,8 +48,8 @@
         <div class="checkboxs">
             <div class="section">
                 地圖類型<br>
-                <label for="google">
-                    <input type="radio" name="mapType" id="google" value="0" checked>
+                <label for="esri">
+                    <input type="radio" name="mapType" id="esri" value="0" checked>
                     ESRI 衛星
                 </label>
                 <label for="photo">
@@ -61,8 +61,8 @@
                     Geojson
                 </label><br>
                 <label for="isLoadWorldMap">
-                    <input type="checkbox" name="isLoadWorldMap" id="isLoadWorldMap" disabled checked>
-                    載入世界地圖
+                    <input type="checkbox" id="isLoadWorldMap" disabled checked>
+                    顯示世界地圖
                 </label>
             </div>
             <div class="section">
@@ -74,6 +74,21 @@
                 <label for="fault2">
                     <input type="radio" name="faultSource" id="fault2" value="2">
                     TEM 臺灣地震模型 2020
+                </label>
+            </div>
+            <div class="section">
+                更多<br>
+                <label for="isLoadPlate">
+                    <input type="checkbox" id="isLoadPlate">
+                    顯示板塊邊界
+                </label>
+                <label for="isLoadJpFault">
+                    <input type="checkbox" id="isLoadJpFault">
+                    顯示日本活動斷層
+                </label>
+                <label for="isLoadEarthquakes">
+                    <input type="checkbox" id="isLoadEarthquakes" disabled>
+                    顯示歷史地震
                 </label>
             </div>
         </div>

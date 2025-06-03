@@ -13,11 +13,15 @@ let layers = {
   photo: null,
   world: null,
   taiwan: null,
-  fault: null
+  fault: null,
+  jpfault: null,
+  plate: null
 };
 let loadMapType = 0;
 let faultSource = 0;
 let isLoadWorldMap = true;
+let isLoadJpFault = false;
+let isLoadPlate = false;
 
 function loadEsriImagery() {
   layers.google = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
@@ -172,6 +176,77 @@ function loadFaultData() {
     });
 }
 
+function loadJpFault() {
+  return fetch("../resources/geodata/fault_jma.geojson")
+    .then((response) => response.json())
+    .then((geojsonData) => {
+      layers.jpfault = L.geoJSON(geojsonData, {
+        style: function (feature) {
+          let color = "";
+
+          switch (feature.properties.rank.replace("*", "")) {
+            case "Sランク": color = "#FF0000"; break;
+            case "Aランク": color = "#FF8000"; break;
+            case "Zランク": color = "#FFC900"; break;
+            default: color = "#AAAAAA"; break;
+          }
+
+          return {
+            color: color,
+            weight: 5,
+            opacity: loadMapType != 2 ? 0.8 : 1,
+            className: "leaflet-fault-line",
+          }
+        },
+        onEachFeature: function (feature, layer) {
+          let popup = {
+            name: null,
+            subtitle: null,
+            condition: null,
+          }
+          if (feature.properties) {
+            popup.name = feature.properties.name;
+            popup.subtitle = feature.properties.name1 + "<br>" + feature.properties.active;
+            popup.condition = `<span class="condition-title">規模：　</span>${feature.properties.size}<br>`;
+            popup.condition += `<span class="condition-title">確率：　</span>${feature.properties.rank}`;
+          }
+
+          popFormat = ``;
+          popFormat += `<div class="popup-title">${popup.name}</div>`;
+          if (popup.subtitle) {
+            popFormat += `<div class="popup-subtitle">${popup.subtitle}</div>`;
+          }
+          if (popup.condition) {
+            popFormat += `<div class="popup-condition">${popup.condition}</div>`;
+          }
+          layer.bindPopup(popFormat);
+        }
+      }).addTo(map);
+    })
+}
+
+function loadPlate() {
+  return Promise.all([
+    fetch("../resources/geodata/plate1.geojson").then(res => res.json()),
+    fetch("../resources/geodata/plate2.geojson").then(res => res.json())
+  ]).then(([geojsonData1, geojsonData2]) => {
+    layers.plate = L.layerGroup([
+      L.geoJSON(geojsonData1, {
+        style: {
+          color: "#cccccc",
+          weight: 2
+        }
+      }),
+      L.geoJSON(geojsonData2, {
+        style: {
+          color: "#eeeeee",
+          weight: 2
+        }
+      })
+    ]).addTo(map);
+  })
+}
+
 function updateLabel() {
   const label1 = document.getElementById("label-1");
   const label2 = document.getElementById("label-2");
@@ -194,7 +269,9 @@ function loadMap() {
   });
   loadWorldMap()
     .then(() => loadMapType === 0 ? loadEsriImagery() : loadMapType === 1 ? loadPhoto() : loadTaiwanMap())
+    .then(() => { if (isLoadPlate) { return loadPlate() } })
     .then(() => loadFaultData())
+    .then(() => { if (isLoadJpFault) { return loadJpFault() } })
     .catch((error) => console.error("載入失敗：", error));
 }
 
@@ -229,11 +306,19 @@ document.querySelectorAll('input[name="faultSource"]').forEach((input) => {
 
 let checkBoxIsLoadWorldMap = document.getElementById("isLoadWorldMap");
 checkBoxIsLoadWorldMap.addEventListener('change', (e) => {
-  if (checkBoxIsLoadWorldMap.checked == true) {
-    isLoadWorldMap = true;
-  } else {
-    isLoadWorldMap = false;
-  }
+  isLoadWorldMap = checkBoxIsLoadWorldMap.checked;
+  loadMap();
+});
+
+let checkBoxIsLoadJpFault = document.getElementById("isLoadJpFault");
+checkBoxIsLoadJpFault.addEventListener('change', (e) => {
+  isLoadJpFault = checkBoxIsLoadJpFault.checked;
+  loadMap();
+});
+
+let checkBoxIsLoadPlate = document.getElementById("isLoadPlate");
+checkBoxIsLoadPlate.addEventListener('change', (e) => {
+  isLoadPlate = checkBoxIsLoadPlate.checked;
   loadMap();
 });
 
