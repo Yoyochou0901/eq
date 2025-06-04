@@ -28,13 +28,14 @@
 
 body,
 html {
-    background: linear-gradient(135deg, #222 -30%, #022536 75%, #222 130%);
+    background: linear-gradient(135deg, #111 -30%, #021c29 75%, #111 130%);
     background-color: #022536;
     background-repeat: no-repeat;
     background-attachment: fixed;
     margin: 0;
     font-family: "Outfit", "Noto Sans TC", "Noto Sans JP", "Noto Sans CN";
     color: #fff;
+    min-height: 100dvh;
 
     &::selection {
         background-color: #80808050;
